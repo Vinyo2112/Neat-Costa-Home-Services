@@ -1,20 +1,38 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Neat Costa Home Services
 
-# Run and deploy your AI Studio app
+Professional Property Care & Cleaning Services along the Costa del Sol.
 
-This contains everything you need to run your app locally.
+## 🚀 Features
+- **Premium Design**: Built with a "Trust & Authority" design system using Cinzel and Josefin Sans typography.
+- **Responsive Layout**: Optimized for mobile, tablet, and desktop viewing.
+- **Service Area Map**: Interactive SVG map showing service coverage from Estepona to Málaga.
+- **WhatsApp Integration**: High-conversion CTAs linked directly to professional property care management.
+- **Branded Imagery**: Custom photography showcasing professional equipment and local coastal scenery.
 
-View your app in AI Studio: https://ai.studio/apps/12af19b2-72db-4e8c-b09f-34e6e91e7312
+## 🛠️ Tech Stack
+- **Framework**: React 19 + TypeScript
+- **Styling**: Tailwind CSS 4
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Build Tool**: Vite 6
 
-## Run Locally
+## 💻 Local Development
 
-**Prerequisites:**  Node.js
+1. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
+2. **Run the development server**:
+   ```bash
+   npm run dev
+   ```
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+3. **Open the app**:
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+## 🌐 Deployment
+This project is ready for deployment on **Vercel**. Connect your GitHub repository to Vercel and it will automatically detect the Vite environment and deploy using `npm run build`.
+
+---
+© 2025 Neat Costa Home Services · La Cala de Mijas

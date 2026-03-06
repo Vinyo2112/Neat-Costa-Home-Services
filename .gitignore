@@ -6,3 +6,8 @@ coverage/
 *.log
 .env*
 !.env.example
+
+# Agent & Local Tools
+.agent/
+.local_node/
+design-system/
