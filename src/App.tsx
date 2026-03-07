@@ -205,8 +205,8 @@ export default function App() {
           </h1>
 
           <p className="text-lg md:text-xl text-white/85 font-light mb-10 max-w-2xl mx-auto leading-relaxed">
-            Personalized cleaning and property staging for your Costa del Sol retreat.
-            Handled personally — always.
+            Reliable Home & Airbnb Services on the Costa del Sol<br />
+            Personal, detail-focused care for your private home or holiday rental
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -599,7 +599,8 @@ export default function App() {
                 Ready to elevate your<br className="hidden md:block" /> property's potential?
               </h2>
               <p className="text-muted text-base leading-relaxed">
-                Message me directly on WhatsApp to discuss your specific needs and get a personalized quote for your Costa del Sol property.
+                Ready to elevate your property’s potential?<br />
+                Message me directly on WhatsApp to discuss your property and how I can assist.
               </p>
               <div className="flex flex-wrap justify-center lg:justify-start gap-5">
                 {["Direct Response", "Personal Care", "Fully Insured"].map(item => (
