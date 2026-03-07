@@ -1,5 +1,5 @@
 import { motion, useScroll, useSpring, AnimatePresence } from "motion/react";
-import aboutImg from "./assets/airbnb-spain.jpg";
+import aboutImg from "./assets/coastal-villas.jpg";
 import heroImg from "./assets/hero-bg.jpg";
 import {
   MessageCircle, MapPin, Sparkles, Home, Calendar,
