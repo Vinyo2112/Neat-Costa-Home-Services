@@ -1,5 +1,5 @@
 import { motion, useScroll, useSpring, AnimatePresence } from "motion/react";
-import aboutImg from "./assets/about-neat-costa.jpg";
+import aboutImg from "./assets/airbnb-spain.jpg";
 import heroImg from "./assets/hero-bg.jpg";
 import {
   MessageCircle, MapPin, Sparkles, Home, Calendar,
@@ -279,7 +279,7 @@ export default function App() {
           >
             <img
               src={aboutImg}
-              alt="Professional Neat Costa branded cleaning supplies and equipment"
+              alt="Stylish modern apartment on the Costa del Sol"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               referrerPolicy="no-referrer"
             />
@@ -312,13 +312,19 @@ export default function App() {
 
             <div className="space-y-5 text-muted leading-relaxed text-base">
               <p>
-                My name is <span className="font-bold text-primary">Gizella</span>, and I am the professional behind Neat Costa Home Services. I provide detail-oriented, reliable cleaning and property care for private residences and short-term rentals along the Costa del Sol.
+                My name is <span className="font-bold text-primary">Gizella</span>, and I am the person behind Neat Costa Home Services. I provide reliable, detail-focused residential cleaning and short-term rental services for private homes and holiday properties along the Costa del Sol.
               </p>
               <p>
-                I work independently, which means your property is <em>always</em> handled personally by me. No rotating teams, no confusion—just consistent, 5-star quality you can depend on.
+                I work independently, which means your property is always handled personally by me. There are no rotating teams and no confusion — just clear communication, punctual service, and consistent attention to detail.
               </p>
               <p>
-                I specialize in physical cleaning and property staging, ensuring your home or rental is always guest-ready and impeccably maintained.
+                My goal is simple: to help homeowners keep their properties clean, well cared for, and ready at all times. Whether it’s a private residence or a holiday rental, you can feel confident that your property is in trustworthy hands.
+              </p>
+              <p>
+                With Neat Costa, I aim to build long-term relationships with clients who value reliability, consistency, and a personal touch. Your home is my priority, and I take pride in providing service you can depend on.
+              </p>
+              <p className="font-medium text-cta pt-2">
+                To learn more about the services I offer, please visit the <a href="#services" className="underline decoration-2 underline-offset-4 hover:text-cta/80 transition-colors">Services</a> page.
               </p>
             </div>
 
