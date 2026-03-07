@@ -197,7 +197,7 @@ export default function App() {
         >
           <div className="inline-flex items-center gap-2 px-5 py-2 bg-white/15 backdrop-blur-xl border border-white/25 text-white text-[10px] font-bold uppercase tracking-[0.45em] rounded-full mb-8">
             <Sparkles className="w-3 h-3 text-cta" aria-hidden="true" />
-            Premium Property Care · Costa del Sol
+            Professional Property Care · Costa del Sol
           </div>
 
           <h1 className="flex flex-col gap-1 text-white mb-8 drop-shadow-lg font-sans">
@@ -502,14 +502,15 @@ export default function App() {
               <div className="space-y-4">
                 <span className="section-label">The Neat Costa Difference</span>
                 <h2 className="text-4xl md:text-5xl font-bold text-primary tracking-tight">Why Choose<br />Neat Costa?</h2>
-                <p className="text-muted text-base">The advantages of a personal, professional partnership.</p>
+                <p className="text-muted text-base">The benefits of a personal, professional service you can trust.</p>
               </div>
 
               <div className="space-y-8">
                 {[
-                  { icon: <Clock className="text-cta w-6 h-6" aria-hidden="true" />, bg: "bg-cta/10", title: "Reliable & Punctual", text: "Time is your most valuable asset. I pride myself on being exactly where I need to be, when I need to be there, ensuring your property is ready without delay." },
-                  { icon: <ShieldCheck className="text-accent w-6 h-6" aria-hidden="true" />, bg: "bg-accent/10", title: "No Rotating Staff", text: "Unlike large agencies, you will never have a stranger in your home. I personally handle every clean, ensuring total security and consistency." },
-                  { icon: <Home className="text-primary w-6 h-6" aria-hidden="true" />, bg: "bg-primary/10", title: "Personal Care & Staging", text: "I don't just clean; I care. From perfect pillow placement to guest-ready staging, I treat your property as if it were my own." },
+                  { icon: <Clock className="text-cta w-6 h-6" aria-hidden="true" />, bg: "bg-cta/10", title: "Reliable & Punctual", text: "I make sure to be exactly where and when I need to be, ensuring your home or rental is always in perfect condition and ready when needed." },
+                  { icon: <ShieldCheck className="text-accent w-6 h-6" aria-hidden="true" />, bg: "bg-accent/10", title: "No Rotating Staff", text: "Unlike larger agencies, you’ll never have a stranger in your property. I personally handle every visit, giving you complete security and consistent, high-quality service." },
+                  { icon: <Home className="text-primary w-6 h-6" aria-hidden="true" />, bg: "bg-primary/10", title: "Personal Care & Attention", text: "I don’t just clean — I care. Every detail is looked after, and your home or rental is prepared as if it were my own, always spotless and guest-ready." },
+                  { icon: <Sparkles className="text-cta w-6 h-6" aria-hidden="true" />, bg: "bg-cta/10", title: "Long-Term Partnership", text: "I build relationships based on trust, reliability, and consistent, high-quality service." },
                 ].map((item) => (
                   <div key={item.title} className="flex gap-5">
                     <div className={`shrink-0 w-12 h-12 ${item.bg} rounded-xl flex items-center justify-center`}>
