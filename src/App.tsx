@@ -245,7 +245,7 @@ export default function App() {
       ══════════════════════════════════════════════ */}
       <section className="py-12 bg-primary" aria-label="Key statistics">
         <div className="max-w-5xl mx-auto px-6 md:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
             {TRUST_STATS.map((stat) => (
               <motion.div
                 key={stat.label}
