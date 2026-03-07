@@ -36,7 +36,7 @@ const TESTIMONIALS = [
   {
     name: "Carlos R.",
     role: "STR Manager · Fuengirola",
-    text: "Professional, punctual and meticulous. She doesn't just clean — she stages. Our rental income went up after the first month. Highly recommended.",
+    text: "Gizella is professional, punctual and really meticulous. She doesn't just clean — she makes sure everything is perfectly staged and ready for our guests. Highly recommended.",
     stars: 5,
   },
 ];
@@ -44,7 +44,6 @@ const TESTIMONIALS = [
 const TRUST_STATS = [
   { value: "100%", label: "Personal Commitment" },
   { value: "5★", label: "Guest Ratings" },
-  { value: "2+", label: "Years Experience" },
   { value: "0", label: "Rotating Staff" },
 ];
 
