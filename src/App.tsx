@@ -729,6 +729,11 @@ export default function App() {
                       ease: "linear"
                     }}
                   />
+
+                  {/* Bottom Map Label */}
+                  <text x="500" y="535" fill="#1B3A6B" textAnchor="middle" fontSize="18" fontWeight="700" opacity="0.8">
+                    No long drives, easy scheduling.
+                  </text>
                 </svg>
               </div>
 
@@ -740,8 +745,7 @@ export default function App() {
                 className="mt-10 max-w-2xl mx-auto bg-background rounded-2xl p-6 md:p-8 border border-border text-center"
               >
                 <p className="text-muted text-sm md:text-base leading-relaxed">
-                  I specialize in <span className="text-primary font-bold">physical cleaning, property staging, and key holding</span>.<br />
-                  No long drives, easy scheduling.
+                  I focus on a small service area to provide fast, reliable, and high-quality service—without the long drives.
                 </p>
                 <div className="mt-5 flex flex-wrap justify-center gap-4 md:gap-8 text-[10px] font-black text-muted uppercase tracking-[0.2em]">
                   {["Professional Cleaning", "Expert Staging", "Key Holding"].map(item => (
