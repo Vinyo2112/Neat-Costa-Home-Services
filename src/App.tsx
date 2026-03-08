@@ -370,7 +370,7 @@ export default function App() {
                 <Calendar className="text-cta w-7 h-7" />
               </div>
               <h3 className="text-2xl font-bold text-primary mb-2">Short-Term Rental (STR) Turnovers</h3>
-              <p className="text-muted mb-8 text-sm italic">Designed for long-term partnerships and guest-ready presentation.</p>
+              <p className="text-muted mb-2 text-sm italic">Designed for long-term partnerships and guest-ready presentation.</p>
 
               <div className="mb-8">
                 <div className="flex items-center gap-3 mb-4">
@@ -407,6 +407,11 @@ export default function App() {
                   </div>
                 ))}
                 <p className="text-xs text-muted italic">* Plus product cost</p>
+                <div className="mt-8 pt-6 border-t border-border/50">
+                  <p className="text-accent/80 text-[11px] font-medium leading-relaxed">
+                    Please note: I do not provide emergency call-outs, laundry, or linen services.
+                  </p>
+                </div>
               </div>
             </motion.div>
 
@@ -736,7 +741,6 @@ export default function App() {
               >
                 <p className="text-muted text-sm md:text-base leading-relaxed">
                   I specialize in <span className="text-primary font-bold">physical cleaning, property staging, and key holding</span>.
-                  I do not provide emergency call-outs, laundry, or linen services.
                 </p>
                 <div className="mt-5 flex flex-wrap justify-center gap-4 md:gap-8 text-[10px] font-black text-muted uppercase tracking-[0.2em]">
                   {["Professional Cleaning", "Expert Staging", "Key Holding"].map(item => (
