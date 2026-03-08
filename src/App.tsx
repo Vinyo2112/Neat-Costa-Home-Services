@@ -374,6 +374,11 @@ export default function App() {
               <p className="text-muted mb-6 text-sm italic">Designed for long-term partnerships and guest-ready presentation.</p>
 
               <div className="mb-8">
+                <div className="flex items-center gap-3 mb-6">
+                  <p className="text-xl md:text-2xl font-black text-primary uppercase tracking-wider">The Core Package</p>
+                  <div className="flex-1 h-px bg-border" />
+                </div>
+
                 <div className="space-y-2 mb-6">
                   <p className="text-xs text-muted flex items-center gap-2">
                     <Clock className="w-3.5 h-3.5 text-cta" /> Availability: Monday–Friday, 9:00–18:00
@@ -398,7 +403,7 @@ export default function App() {
                       key={size}
                       variants={{ hidden: { opacity: 0, x: -10 }, show: { opacity: 1, x: 0 } }}
                       whileHover={{ scale: 1.02, x: 5 }}
-                      className="bg-white rounded-2xl border border-border/60 p-5 flex flex-col gap-2 shadow-sm transition-shadow hover:shadow-md cursor-pointer group"
+                      className="bg-primary/5 rounded-2xl border border-primary/10 p-5 flex flex-col gap-2 shadow-sm transition-shadow hover:shadow-md cursor-pointer group"
                     >
                       <div className="flex items-center justify-between gap-4">
                         <p className="text-xl font-bold text-primary flex items-center gap-3 transition-colors group-hover:text-cta">
@@ -436,23 +441,10 @@ export default function App() {
                     <span className="font-bold text-cta">Tip:</span> If the host provides the products, only the <span className="font-semibold text-primary">Welcome Pack Setup</span> fee applies. If I buy the products, the <span className="font-semibold text-primary">Restocking</span> row applies.
                   </p>
                 </div>
-                <div className="mt-8 pt-8 border-t border-border/50">
-                  <motion.div
-                    initial={{ scale: 0.95, opacity: 0 }}
-                    whileInView={{ scale: 1, opacity: 1 }}
-                    viewport={{ once: true }}
-                    className="bg-[#C5A059] p-6 rounded-2xl shadow-xl flex flex-col gap-3 border-2 border-[#1B3A6B]/10"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className="p-1.5 bg-[#1B3A6B] rounded-full">
-                        <X className="w-4 h-4 text-white" />
-                      </div>
-                      <p className="text-[11px] font-black uppercase tracking-[0.2em] text-[#1B3A6B]">Service Disclaimer</p>
-                    </div>
-                    <p className="text-[#1B3A6B] text-sm md:text-base font-black leading-relaxed">
-                      Please Note: I do not provide emergency call-outs, laundry, late-night check-ins, or linen services.
-                    </p>
-                  </motion.div>
+                <div className="mt-8 pt-6 border-t border-border/50">
+                  <p className="text-primary text-sm md:text-base font-bold leading-relaxed italic text-center">
+                    <span className="text-cta">Please Note:</span> I do not provide emergency call-outs, laundry, late-night check-ins, or linen services.
+                  </p>
                 </div>
               </div>
             </motion.div>
@@ -496,7 +488,7 @@ export default function App() {
                       key={item.size}
                       variants={{ hidden: { opacity: 0, x: 10 }, show: { opacity: 1, x: 0 } }}
                       whileHover={{ scale: 1.02, x: -5 }}
-                      className="bg-white rounded-2xl border border-border/60 p-5 flex flex-col gap-2 shadow-sm transition-shadow hover:shadow-md cursor-pointer group"
+                      className="bg-primary/5 rounded-2xl border border-primary/10 p-5 flex flex-col gap-2 shadow-sm transition-shadow hover:shadow-md cursor-pointer group"
                     >
                       <div className="flex items-center justify-between gap-4">
                         <p className="text-xl font-bold text-primary flex items-center gap-3 transition-colors group-hover:text-cta">
