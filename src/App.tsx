@@ -391,7 +391,7 @@ export default function App() {
               </div>
 
               <div className="mt-auto pt-8 border-t border-border/50 space-y-6">
-                <p className="text-xs font-bold text-muted uppercase tracking-wider">Premium Add-ons</p>
+                <p className="text-xs font-bold text-muted uppercase tracking-wider">Extras</p>
                 {[
                   ["Welcome Packet Setup", "Professional arrangement of guest essentials.", "15–25 €"],
                   ["Weekly Property Check", "Photo report and airing out.", "25–35 €"],
@@ -638,7 +638,7 @@ export default function App() {
             {[
               { icon: <MapPin className="w-7 h-7 text-cta" aria-hidden="true" />, label: "La Cala de Mijas Hub" },
               { icon: <Clock className="w-7 h-7 text-cta" aria-hidden="true" />, label: "Reliable Scheduling" },
-              { icon: <Home className="w-7 h-7 text-cta" aria-hidden="true" />, label: "Property Staging Expert" },
+              { icon: <Home className="w-7 h-7 text-cta" aria-hidden="true" />, label: "Property Support Services" },
             ].map((item) => (
               <div key={item.label} className="flex flex-col items-center gap-4">
                 <div className="p-4 bg-cta/10 border border-cta/20 rounded-2xl">{item.icon}</div>
