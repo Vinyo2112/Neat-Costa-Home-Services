@@ -25,6 +25,8 @@
   /* Slate-500 — muted text */
   --color-border: #CBD5E1;
   /* Slate-300 — visible borders */
+  --color-surface-warm: #FEF9F3;
+  /* Very soft warm cream */
 }
 
 @layer base {
