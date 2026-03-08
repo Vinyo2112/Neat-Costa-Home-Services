@@ -265,7 +265,7 @@ export default function App() {
       {/* ══════════════════════════════════════════════
           ABOUT
       ══════════════════════════════════════════════ */}
-      <section id="about" className="py-24 md:py-36 px-6 md:px-12 bg-surface-warm">
+      <section id="about" className="py-24 md:py-36 px-6 md:px-12 bg-surface">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[45%_55%] gap-14 items-center">
 
           {/* Image */}
@@ -352,17 +352,8 @@ export default function App() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <span className="section-label">Our Expertise</span>
-            <h2 className="text-4xl md:text-7xl font-bold text-primary tracking-tight uppercase">
-              <span className="text-cta">The</span> Services
-            </h2>
-            <div className="flex justify-center items-center gap-4 mt-6">
-              <div className="h-px w-12 bg-cta/30" />
-              <div className="w-3 h-3 rotate-45 border-2 border-cta" />
-              <div className="h-px w-12 bg-cta/30" />
-            </div>
-            <p className="text-muted max-w-2xl mx-auto mt-8 text-lg lg:text-xl font-light italic">
-              Bespoke property care designed for long-term partnerships and elite presentation.
-            </p>
+            <h2 className="text-4xl md:text-6xl font-bold text-primary tracking-tight">Services</h2>
+            <p className="text-muted max-w-xl mx-auto mt-4 text-base">Designed for long-term partnerships and guest-ready presentation.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -446,17 +437,22 @@ export default function App() {
                   </p>
                 </div>
                 <div className="mt-8 pt-8 border-t border-border/50">
-                  <div className="bg-primary border-l-4 border-cta p-6 rounded-r-2xl transform transition-transform hover:scale-[1.02] shadow-xl">
-                    <div className="flex items-center gap-3 mb-2">
-                      <div className="p-1 bg-cta/20 rounded-full">
-                        <X className="w-4 h-4 text-cta" />
+                  <motion.div
+                    initial={{ scale: 0.95, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
+                    viewport={{ once: true }}
+                    className="bg-[#C5A059] p-6 rounded-2xl shadow-xl flex flex-col gap-3 border-2 border-[#1B3A6B]/10"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="p-1.5 bg-[#1B3A6B] rounded-full">
+                        <X className="w-4 h-4 text-white" />
                       </div>
-                      <p className="text-[11px] font-black uppercase tracking-[0.2em] text-cta">Important Policy — Please Note</p>
+                      <p className="text-[11px] font-black uppercase tracking-[0.2em] text-[#1B3A6B]">Service Disclaimer</p>
                     </div>
-                    <p className="text-white text-sm md:text-base font-bold leading-relaxed">
-                      I do not provide <span className="text-cta">emergency call-outs, laundry, late-night check-ins, or linen services.</span>
+                    <p className="text-[#1B3A6B] text-sm md:text-base font-black leading-relaxed">
+                      Please Note: I do not provide emergency call-outs, laundry, late-night check-ins, or linen services.
                     </p>
-                  </div>
+                  </motion.div>
                 </div>
               </div>
             </motion.div>
@@ -673,7 +669,7 @@ export default function App() {
       {/* ══════════════════════════════════════════════
           WHATSAPP CTA
       ══════════════════════════════════════════════ */}
-      <section className="py-20 bg-surface-warm border-y border-border overflow-hidden">
+      <section className="py-20 bg-surface border-y border-border overflow-hidden">
         <div className="max-w-5xl mx-auto px-6 md:px-12">
           <div className="bg-surface rounded-[2.5rem] p-10 md:p-14 shadow-xl border border-border flex flex-col lg:flex-row items-center justify-between gap-10">
             <div className="max-w-2xl text-center lg:text-left space-y-5">
