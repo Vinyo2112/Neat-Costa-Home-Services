@@ -374,10 +374,13 @@ export default function App() {
               <p className="text-muted mb-6 text-sm italic">Designed for long-term partnerships and guest-ready presentation.</p>
 
               <div className="mb-8">
-                <div className="flex items-center gap-3 mb-6">
+                <div className="flex items-center gap-3 mb-2">
                   <p className="text-xl md:text-2xl font-black text-primary uppercase tracking-wider">The Core Package</p>
                   <div className="flex-1 h-px bg-border" />
                 </div>
+                <p className="text-sm text-muted mb-6 font-bold uppercase tracking-wide">
+                  (Full Cleaning + Key Holding for Self Check-in)
+                </p>
 
                 <div className="space-y-2 mb-6">
                   <p className="text-xs text-muted flex items-center gap-2">
@@ -461,8 +464,8 @@ export default function App() {
               <div className="w-14 h-14 bg-cta/10 rounded-2xl flex items-center justify-center mb-8" aria-hidden="true">
                 <Sparkles className="text-cta w-7 h-7" />
               </div>
-              <h3 className="text-2xl font-bold text-primary mb-2">Residential Cleaning Options</h3>
-              <p className="text-muted mb-8 text-sm italic">Professional care for your private residence.</p>
+              <h3 className="text-3xl font-bold text-primary mb-2">Residential Cleaning Options</h3>
+              <p className="text-muted mb-6 text-sm italic">Professional care for your private residence.</p>
 
               <div className="space-y-6">
                 <motion.div
