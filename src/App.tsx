@@ -388,23 +388,26 @@ export default function App() {
                 </div>
                 <ul className="space-y-4">
                   {[["1 Bedroom", "90 €"], ["2 Bedrooms", "110 €"], ["3 Bedrooms", "130 €"]].map(([size, price]) => (
-                    <li key={size} className="flex justify-between items-center pb-4 border-b border-border/50">
-                      <span className="flex items-center gap-3 font-medium text-sm">
-                        <CheckCircle2 className="w-4 h-4 text-accent shrink-0" aria-hidden="true" /> {size}
-                      </span>
-                      <span className="font-mono font-bold text-primary">{price}</span>
+                    <li key={size} className="flex flex-col gap-1 pb-4 border-b border-border/50">
+                      <div className="flex justify-between items-center">
+                        <span className="flex items-center gap-3 font-medium text-sm">
+                          <CheckCircle2 className="w-4 h-4 text-accent shrink-0" aria-hidden="true" /> {size}
+                        </span>
+                        <span className="font-mono font-bold text-primary">{price}</span>
+                      </div>
+                      <p className="text-[10px] text-muted italic ml-7">Full cleaning + self check-in coordination</p>
                     </li>
                   ))}
                 </ul>
               </div>
 
               <div className="mt-auto pt-8 border-t border-border/50 space-y-6">
-                <p className="text-xs font-bold text-muted uppercase tracking-wider">Extras</p>
+                <p className="text-xs font-bold text-muted uppercase tracking-wider">Optional Extras</p>
                 {[
                   ["Welcome Packet Setup", "Setup & decorative arrangement, products not included", "15–25 €"],
                   ["Weekly Property Check", "Ventilation, minor checks, photo report", "25–35 €"],
                   ["Monthly Property Check", "Full inspection, photo report, maintenance suggestions", "40–60 €"],
-                  ["Restocking / Replenishing", "If I need to buy products (water, snacks, coffee, etc.) plus service fee.", "Cost + 10–15 €"],
+                  ["Restocking / Replenishing", "If I need to buy products (water, snacks, coffee, WC paper, cleaning supplies) plus service fee", "Product Cost + 10–15 €"],
                 ].map(([title, desc, price]) => (
                   <div key={title} className="flex justify-between items-start gap-4">
                     <div>
@@ -523,10 +526,10 @@ export default function App() {
 
               <div className="space-y-8">
                 {[
-                  { icon: <Clock className="text-cta w-6 h-6" aria-hidden="true" />, bg: "bg-cta/10", title: "Reliable & Punctual", text: "I make sure to be exactly where and when I need to be, ensuring your home or rental is always in perfect condition and ready when needed." },
-                  { icon: <ShieldCheck className="text-accent w-6 h-6" aria-hidden="true" />, bg: "bg-accent/10", title: "No Rotating Staff", text: "Unlike larger agencies, you’ll never have a stranger in your property. I personally handle every visit, giving you complete security and consistent, high-quality service." },
-                  { icon: <Home className="text-primary w-6 h-6" aria-hidden="true" />, bg: "bg-primary/10", title: "Personal Care & Attention", text: "I don’t just clean — I care. Every detail is looked after, and your home or rental is prepared as if it were my own, always spotless and guest-ready." },
-                  { icon: <Sparkles className="text-cta w-6 h-6" aria-hidden="true" />, bg: "bg-cta/10", title: "Long-Term Partnership", text: "I build relationships based on trust, reliability, and consistent, high-quality service." },
+                  { icon: <ShieldCheck className="text-cta w-6 h-6" aria-hidden="true" />, bg: "bg-cta/10", title: "Reliable and organized", text: "Consistency you can depend on, every single time." },
+                  { icon: <Clock className="text-accent w-6 h-6" aria-hidden="true" />, bg: "bg-accent/10", title: "Detailed property checks & photo reports", text: "Complete peace of mind through transparent, visual updates." },
+                  { icon: <Home className="text-primary w-6 h-6" aria-hidden="true" />, bg: "bg-primary/10", title: "Self check-in friendly (stress-free for hosts & guests)", text: "Seamless coordination that makes hosting easier and guest arrival smoother." },
+                  { icon: <Sparkles className="text-cta w-6 h-6" aria-hidden="true" />, bg: "bg-cta/10", title: "Professional cleaning standards", text: "Guest-ready presentation that consistently earns 5-star ratings." },
                 ].map((item) => (
                   <div key={item.title} className="flex gap-5">
                     <div className={`shrink-0 w-12 h-12 ${item.bg} rounded-xl flex items-center justify-center`}>
