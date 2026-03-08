@@ -265,7 +265,7 @@ export default function App() {
       {/* ══════════════════════════════════════════════
           ABOUT
       ══════════════════════════════════════════════ */}
-      <section id="about" className="py-24 md:py-36 px-6 md:px-12 bg-surface">
+      <section id="about" className="py-20 md:py-36 px-4 md:px-12 bg-surface">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[45%_55%] gap-14 items-center">
 
           {/* Image */}
@@ -348,7 +348,7 @@ export default function App() {
       {/* ══════════════════════════════════════════════
           SERVICES
       ══════════════════════════════════════════════ */}
-      <section id="services" className="py-24 md:py-36 px-6 md:px-12 bg-surface-warm">
+      <section id="services" className="py-20 md:py-36 px-4 md:px-12 bg-surface-warm">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <span className="section-label">Our Expertise</span>
@@ -364,7 +364,7 @@ export default function App() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="bg-white/80 backdrop-blur-sm p-10 md:p-12 rounded-[3rem] shadow-2xl border border-cta/10 premium-card flex flex-col relative overflow-hidden group"
+              className="bg-white/80 backdrop-blur-sm px-5 py-8 md:p-12 rounded-[2.5rem] md:rounded-[3rem] shadow-2xl border border-cta/10 premium-card flex flex-col relative overflow-hidden group"
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-cta/5 rounded-bl-full -mr-16 -mt-16 transition-transform group-hover:scale-110" />
               <div className="w-14 h-14 bg-cta/10 rounded-2xl flex items-center justify-center mb-8" aria-hidden="true">
@@ -406,7 +406,7 @@ export default function App() {
                       key={size}
                       variants={{ hidden: { opacity: 0, x: -10 }, show: { opacity: 1, x: 0 } }}
                       whileHover={{ scale: 1.02, x: 5 }}
-                      className="bg-primary/5 rounded-2xl border border-primary/10 p-5 flex flex-col gap-2 shadow-sm transition-shadow hover:shadow-md cursor-pointer group"
+                      className="bg-primary/5 rounded-2xl border border-primary/10 p-4 md:p-5 flex flex-col gap-2 shadow-sm transition-shadow hover:shadow-md cursor-pointer group"
                     >
                       <div className="flex items-center justify-between gap-4">
                         <p className="text-xl font-bold text-primary flex items-center gap-3 transition-colors group-hover:text-cta">
@@ -458,7 +458,7 @@ export default function App() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="bg-white/80 backdrop-blur-sm p-10 md:p-12 rounded-[3rem] shadow-2xl border border-cta/10 premium-card flex flex-col relative overflow-hidden group"
+              className="bg-white/80 backdrop-blur-sm px-5 py-8 md:p-12 rounded-[2.5rem] md:rounded-[3rem] shadow-2xl border border-cta/10 premium-card flex flex-col relative overflow-hidden group"
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-cta/5 rounded-bl-full -mr-16 -mt-16 transition-transform group-hover:scale-110" />
               <div className="w-14 h-14 bg-cta/10 rounded-2xl flex items-center justify-center mb-8" aria-hidden="true">
@@ -491,7 +491,7 @@ export default function App() {
                       key={item.size}
                       variants={{ hidden: { opacity: 0, x: 10 }, show: { opacity: 1, x: 0 } }}
                       whileHover={{ scale: 1.02, x: -5 }}
-                      className="bg-primary/5 rounded-2xl border border-primary/10 p-5 flex flex-col gap-2 shadow-sm transition-shadow hover:shadow-md cursor-pointer group"
+                      className="bg-primary/5 rounded-2xl border border-primary/10 p-4 md:p-5 flex flex-col gap-2 shadow-sm transition-shadow hover:shadow-md cursor-pointer group"
                     >
                       <div className="flex items-center justify-between gap-2 md:gap-4">
                         <p className="text-lg md:text-xl font-bold text-primary flex items-center gap-2 md:gap-3 transition-colors group-hover:text-cta">
@@ -525,7 +525,7 @@ export default function App() {
                 </motion.div>
 
                 <div className="grid grid-cols-1 gap-4">
-                  <div className="bg-background p-5 rounded-2xl border border-border">
+                  <div className="bg-background p-4 md:p-5 rounded-2xl border border-border">
                     <p className="text-xs font-bold text-cta uppercase tracking-widest mb-3">Standard Clean Includes</p>
                     <div className="flex flex-wrap gap-2">
                       {["General cleaning", "Dusting", "Vacuuming", "Surfaces"].map(tag => (
@@ -533,7 +533,7 @@ export default function App() {
                       ))}
                     </div>
                   </div>
-                  <div className="bg-accent/5 p-5 rounded-2xl border border-accent/20">
+                  <div className="bg-accent/5 p-4 md:p-5 rounded-2xl border border-accent/20">
                     <p className="text-xs font-bold text-accent uppercase tracking-widest mb-3">Deep Clean Also Includes</p>
                     <div className="flex flex-wrap gap-2 mb-3">
                       {["Degreasing", "Descaling", "Hard-to-reach areas"].map(tag => (
@@ -552,7 +552,7 @@ export default function App() {
               </div>
 
               <div className="mt-auto pt-8">
-                <div className="bg-primary/5 p-4 rounded-2xl border border-primary/10 flex items-center gap-3">
+                <div className="bg-primary/5 p-4 rounded-2xl border border-primary/10 flex items-start md:items-center gap-3">
                   <ShieldCheck className="w-5 h-5 text-primary shrink-0" aria-hidden="true" />
                   <p className="text-sm text-primary font-semibold">All cleaning products provided by Neat Costa.</p>
                 </div>
@@ -565,7 +565,7 @@ export default function App() {
       {/* ══════════════════════════════════════════════
           WHY CHOOSE
       ══════════════════════════════════════════════ */}
-      <section className="py-24 md:py-36 px-6 md:px-12 bg-surface overflow-hidden">
+      <section className="py-20 md:py-36 px-4 md:px-12 bg-surface overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -630,7 +630,7 @@ export default function App() {
       {/* ══════════════════════════════════════════════
           TESTIMONIALS  (new section — landing pattern)
       ══════════════════════════════════════════════ */}
-      <section id="reviews" className="py-24 md:py-36 px-6 md:px-12 bg-primary overflow-hidden">
+      <section id="reviews" className="py-20 md:py-36 px-4 md:px-12 bg-primary overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <span className="text-cta font-bold uppercase tracking-[0.3em] text-[11px] block mb-3">Client Stories</span>
@@ -665,8 +665,8 @@ export default function App() {
           WHATSAPP CTA
       ══════════════════════════════════════════════ */}
       <section className="py-20 bg-surface border-y border-border overflow-hidden">
-        <div className="max-w-5xl mx-auto px-6 md:px-12">
-          <div className="bg-surface rounded-[2.5rem] p-10 md:p-14 shadow-xl border border-border flex flex-col lg:flex-row items-center justify-between gap-10">
+        <div className="max-w-5xl mx-auto px-4 md:px-12">
+          <div className="bg-surface rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-14 shadow-xl border border-border flex flex-col lg:flex-row items-center justify-between gap-8 md:gap-10">
             <div className="max-w-2xl text-center lg:text-left space-y-5">
               <div className="trust-badge">
                 <Sparkles className="w-3 h-3" aria-hidden="true" />
@@ -835,7 +835,7 @@ export default function App() {
       {/* ══════════════════════════════════════════════
           FOOTER
       ══════════════════════════════════════════════ */}
-      <footer className="py-16 bg-primary" role="contentinfo">
+      <footer className="py-16 bg-primary px-4" role="contentinfo">
         <div className="max-w-7xl mx-auto px-6 md:px-12 text-center space-y-10">
           <a href="#" className="flex flex-col items-center gap-4 group cursor-pointer" aria-label="Neat Costa — back to top">
             <img
