@@ -265,7 +265,7 @@ export default function App() {
       {/* ══════════════════════════════════════════════
           ABOUT
       ══════════════════════════════════════════════ */}
-      <section id="about" className="py-24 md:py-36 px-6 md:px-12 bg-surface">
+      <section id="about" className="py-24 md:py-36 px-6 md:px-12 bg-surface-warm">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[45%_55%] gap-14 items-center">
 
           {/* Image */}
@@ -353,7 +353,8 @@ export default function App() {
           <div className="text-center mb-16">
             <span className="section-label">Our Expertise</span>
             <h2 className="text-4xl md:text-6xl font-bold text-primary tracking-tight">Services</h2>
-            <p className="text-muted max-w-xl mx-auto mt-4 text-base">Designed for long-term partnerships and guest-ready presentation.</p>
+            <div className="w-24 h-1.5 bg-cta mx-auto mt-6 rounded-full" />
+            <p className="text-muted max-w-xl mx-auto mt-6 text-base lg:text-lg">Designed for long-term partnerships and guest-ready presentation.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -369,8 +370,8 @@ export default function App() {
               <div className="w-14 h-14 bg-cta/10 rounded-2xl flex items-center justify-center mb-8" aria-hidden="true">
                 <Calendar className="text-cta w-7 h-7" />
               </div>
-              <h3 className="text-2xl font-bold text-primary mb-2">Short-Term Rental (STR) Turnovers</h3>
-              <p className="text-muted mb-2 text-sm italic">Designed for long-term partnerships and guest-ready presentation.</p>
+              <h3 className="text-3xl font-bold text-primary mb-2">Short-Term Rental Turnovers</h3>
+              <p className="text-muted mb-6 text-sm italic">Designed for long-term partnerships and guest-ready presentation.</p>
 
               <div className="mb-8">
                 <div className="space-y-2 mb-6">
@@ -379,11 +380,28 @@ export default function App() {
                   </p>
                 </div>
 
-                <div className="grid grid-cols-1 gap-3">
+                <motion.div
+                  className="grid grid-cols-1 gap-3"
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true }}
+                  variants={{
+                    hidden: { opacity: 0 },
+                    show: {
+                      opacity: 1,
+                      transition: { staggerChildren: 0.1 }
+                    }
+                  }}
+                >
                   {[["1 Bedroom", "90 €"], ["2 Bedrooms", "110 €"], ["3 Bedrooms", "130 €"]].map(([size, price]) => (
-                    <div key={size} className="bg-background rounded-2xl border border-border p-5 flex flex-col gap-2">
+                    <motion.div
+                      key={size}
+                      variants={{ hidden: { opacity: 0, x: -10 }, show: { opacity: 1, x: 0 } }}
+                      whileHover={{ scale: 1.02, x: 5 }}
+                      className="bg-white rounded-2xl border border-border/60 p-5 flex flex-col gap-2 shadow-sm transition-shadow hover:shadow-md cursor-pointer group"
+                    >
                       <div className="flex items-center justify-between gap-4">
-                        <p className="text-xl font-bold text-primary flex items-center gap-3">
+                        <p className="text-xl font-bold text-primary flex items-center gap-3 transition-colors group-hover:text-cta">
                           <CheckCircle2 className="w-5 h-5 text-cta shrink-0" aria-hidden="true" /> {size}
                         </p>
                         <div className="text-right">
@@ -392,9 +410,9 @@ export default function App() {
                         </div>
                       </div>
                       <p className="text-[10px] text-muted italic ml-8">Full cleaning + key holding & self check-in coordination</p>
-                    </div>
+                    </motion.div>
                   ))}
-                </div>
+                </motion.div>
               </div>
 
               <div className="mt-auto pt-8 border-t border-border/50 space-y-6">
@@ -441,16 +459,33 @@ export default function App() {
               <p className="text-muted mb-8 text-sm italic">Professional care for your private residence.</p>
 
               <div className="space-y-6">
-                <div className="grid grid-cols-1 gap-3">
+                <motion.div
+                  className="grid grid-cols-1 gap-3"
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true }}
+                  variants={{
+                    hidden: { opacity: 0 },
+                    show: {
+                      opacity: 1,
+                      transition: { staggerChildren: 0.1 }
+                    }
+                  }}
+                >
                   {[
                     { size: "1 Bedroom", standard: "60 €", deep: "90 €" },
                     { size: "2 Bedrooms", standard: "85 €", deep: "120 €" },
                     { size: "3 Bedrooms", standard: "110 €", deep: "150 €" },
                     { size: "Move in/Move out clean", standard: "130 €", deep: "130 €" },
                   ].map((item) => (
-                    <div key={item.size} className="bg-background rounded-2xl border border-border p-5 flex flex-col gap-2">
+                    <motion.div
+                      key={item.size}
+                      variants={{ hidden: { opacity: 0, x: 10 }, show: { opacity: 1, x: 0 } }}
+                      whileHover={{ scale: 1.02, x: -5 }}
+                      className="bg-white rounded-2xl border border-border/60 p-5 flex flex-col gap-2 shadow-sm transition-shadow hover:shadow-md cursor-pointer group"
+                    >
                       <div className="flex items-center justify-between gap-4">
-                        <p className="text-xl font-bold text-primary flex items-center gap-3">
+                        <p className="text-xl font-bold text-primary flex items-center gap-3 transition-colors group-hover:text-cta">
                           <CheckCircle2 className="w-5 h-5 text-cta shrink-0" aria-hidden="true" /> {item.size}
                         </p>
                         {item.size === "Move in/Move out clean" ? (
@@ -476,9 +511,9 @@ export default function App() {
                       ) : (
                         <p className="text-[10px] text-muted italic ml-8">Professional cleaning for your home</p>
                       )}
-                    </div>
+                    </motion.div>
                   ))}
-                </div>
+                </motion.div>
 
                 <div className="grid grid-cols-1 gap-4">
                   <div className="bg-background p-5 rounded-2xl border border-border">
@@ -620,7 +655,7 @@ export default function App() {
       {/* ══════════════════════════════════════════════
           WHATSAPP CTA
       ══════════════════════════════════════════════ */}
-      <section className="py-20 bg-background border-y border-border overflow-hidden">
+      <section className="py-20 bg-surface-warm border-y border-border overflow-hidden">
         <div className="max-w-5xl mx-auto px-6 md:px-12">
           <div className="bg-surface rounded-[2.5rem] p-10 md:p-14 shadow-xl border border-border flex flex-col lg:flex-row items-center justify-between gap-10">
             <div className="max-w-2xl text-center lg:text-left space-y-5">
