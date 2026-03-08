@@ -372,30 +372,42 @@ export default function App() {
               <h3 className="text-2xl font-bold text-primary mb-2">Short-Term Rental (STR) Turnovers</h3>
               <p className="text-muted mb-2 text-sm italic">Designed for long-term partnerships and guest-ready presentation.</p>
 
-              <div className="mb-8">
-                <div className="flex items-center gap-3 mb-4">
-                  <p className="text-xs font-bold text-cta uppercase tracking-widest">The Core Package</p>
+              <div className="mb-10">
+                <div className="flex items-center gap-4 mb-6">
+                  <span className="px-4 py-1.5 bg-cta text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-full shadow-lg shadow-cta/20">Essential</span>
+                  <p className="text-sm md:text-base font-bold text-primary uppercase tracking-widest">The Core Package</p>
                   <div className="flex-1 h-px bg-border" />
                 </div>
-                <p className="text-xs text-muted mb-3 font-medium">(Full Cleaning + Key Holding for Self Check-in)</p>
-                <div className="space-y-2 mb-6">
-                  <p className="text-[11px] text-muted flex items-center gap-2">
-                    <Clock className="w-3 h-3 text-cta" /> Availability: Monday–Friday, 9:00–18:00
-                  </p>
-                  <p className="text-[11px] text-accent flex items-center gap-2 font-medium">
-                    <X className="w-3 h-3 text-accent" /> No laundry, no late-night check-in, no emergency call-outs
-                  </p>
+
+                <div className="bg-cta/5 border border-cta/10 rounded-[1.5rem] p-6 mb-8 group hover:bg-cta/[0.07] transition-colors duration-300">
+                  <p className="text-lg md:text-xl text-primary mb-2 font-bold tracking-tight">Full Cleaning + Key Holding</p>
+                  <p className="text-xs text-muted mb-6 font-medium uppercase tracking-wider">Perfect for hassle-free self check-ins</p>
+
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-4 p-3 bg-white/50 rounded-xl border border-white/80">
+                      <Clock className="w-5 h-5 text-cta shrink-0" />
+                      <p className="text-sm text-primary font-semibold leading-none">Mon–Fri, 09:00–18:00</p>
+                    </div>
+                    <div className="flex items-center gap-4 p-3 bg-accent/5 rounded-xl border border-accent/10">
+                      <X className="w-5 h-5 text-accent shrink-0" />
+                      <p className="text-xs text-accent font-bold uppercase tracking-tight">No laundry or late call-outs</p>
+                    </div>
+                  </div>
                 </div>
+
                 <ul className="space-y-4">
                   {[["1 Bedroom", "90 €"], ["2 Bedrooms", "110 €"], ["3 Bedrooms", "130 €"]].map(([size, price]) => (
-                    <li key={size} className="flex flex-col gap-1 pb-4 border-b border-border/50">
+                    <li key={size} className="flex flex-col gap-1 pb-4 border-b border-border/50 group">
                       <div className="flex justify-between items-center">
-                        <span className="flex items-center gap-3 font-medium text-sm">
-                          <CheckCircle2 className="w-4 h-4 text-accent shrink-0" aria-hidden="true" /> {size}
+                        <span className="flex items-center gap-3 font-bold text-base text-primary">
+                          <CheckCircle2 className="w-5 h-5 text-accent shrink-0" aria-hidden="true" /> {size}
                         </span>
-                        <span className="font-mono font-bold text-primary">{price}</span>
+                        <div className="flex items-center gap-2">
+                          <span className="text-[10px] font-bold text-muted uppercase tracking-tighter">Starting from</span>
+                          <span className="font-mono font-black text-2xl text-primary">{price}</span>
+                        </div>
                       </div>
-                      <p className="text-[10px] text-muted italic ml-7">Full cleaning + self check-in coordination</p>
+                      <p className="text-xs text-muted italic ml-8">Comprehensive turnover & guest-ready staging</p>
                     </li>
                   ))}
                 </ul>
@@ -455,16 +467,23 @@ export default function App() {
                     <div key={item.size} className="bg-background rounded-2xl border border-border p-4 flex flex-col gap-2">
                       <div className="flex items-center justify-between gap-4">
                         <p className="text-sm font-bold text-primary">{item.size}</p>
-                        <div className="flex gap-6">
+                        {item.size === "Move in/Move out clean" ? (
                           <div className="text-right">
-                            <p className="text-[10px] font-bold text-muted uppercase tracking-widest mb-0.5">Standard</p>
-                            <p className="font-mono font-bold text-cta text-sm">{item.standard}</p>
+                            <p className="text-[10px] font-bold text-cta uppercase tracking-widest mb-0.5">Single Price</p>
+                            <p className="font-mono font-black text-cta text-lg leading-none">{item.standard}</p>
                           </div>
-                          <div className="text-right">
-                            <p className="text-[10px] font-bold text-accent uppercase tracking-widest mb-0.5">Deep</p>
-                            <p className="font-mono font-bold text-accent text-sm">{item.deep}</p>
+                        ) : (
+                          <div className="flex gap-6">
+                            <div className="text-right">
+                              <p className="text-[10px] font-bold text-muted uppercase tracking-widest mb-0.5">Standard</p>
+                              <p className="font-mono font-bold text-cta text-sm">{item.standard}</p>
+                            </div>
+                            <div className="text-right">
+                              <p className="text-[10px] font-bold text-accent uppercase tracking-widest mb-0.5">Deep</p>
+                              <p className="font-mono font-bold text-accent text-sm">{item.deep}</p>
+                            </div>
                           </div>
-                        </div>
+                        )}
                       </div>
                       {item.size === "Move in/Move out clean" && (
                         <p className="text-[10px] text-muted italic">depending on the size of the property</p>
