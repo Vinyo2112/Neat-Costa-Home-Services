@@ -352,9 +352,17 @@ export default function App() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <span className="section-label">Our Expertise</span>
-            <h2 className="text-4xl md:text-6xl font-bold text-primary tracking-tight">Services</h2>
-            <div className="w-24 h-1.5 bg-cta mx-auto mt-6 rounded-full" />
-            <p className="text-muted max-w-xl mx-auto mt-6 text-base lg:text-lg">Designed for long-term partnerships and guest-ready presentation.</p>
+            <h2 className="text-4xl md:text-7xl font-bold text-primary tracking-tight uppercase">
+              <span className="text-cta">The</span> Services
+            </h2>
+            <div className="flex justify-center items-center gap-4 mt-6">
+              <div className="h-px w-12 bg-cta/30" />
+              <div className="w-3 h-3 rotate-45 border-2 border-cta" />
+              <div className="h-px w-12 bg-cta/30" />
+            </div>
+            <p className="text-muted max-w-2xl mx-auto mt-8 text-lg lg:text-xl font-light italic">
+              Bespoke property care designed for long-term partnerships and elite presentation.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -365,8 +373,9 @@ export default function App() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="bg-surface p-10 md:p-12 rounded-[2.5rem] shadow-lg border border-border premium-card flex flex-col"
+              className="bg-white/80 backdrop-blur-sm p-10 md:p-12 rounded-[3rem] shadow-2xl border border-cta/10 premium-card flex flex-col relative overflow-hidden group"
             >
+              <div className="absolute top-0 right-0 w-32 h-32 bg-cta/5 rounded-bl-full -mr-16 -mt-16 transition-transform group-hover:scale-110" />
               <div className="w-14 h-14 bg-cta/10 rounded-2xl flex items-center justify-center mb-8" aria-hidden="true">
                 <Calendar className="text-cta w-7 h-7" />
               </div>
@@ -436,10 +445,18 @@ export default function App() {
                     <span className="font-bold text-cta">Tip:</span> If the host provides the products, only the <span className="font-semibold text-primary">Welcome Pack Setup</span> fee applies. If I buy the products, the <span className="font-semibold text-primary">Restocking</span> row applies.
                   </p>
                 </div>
-                <div className="mt-8 pt-6 border-t border-border/50">
-                  <p className="text-accent/80 text-[11px] font-medium leading-relaxed italic">
-                    I do not provide emergency call-outs, laundry, late-night check-ins, or linen services.
-                  </p>
+                <div className="mt-8 pt-8 border-t border-border/50">
+                  <div className="bg-primary border-l-4 border-cta p-6 rounded-r-2xl transform transition-transform hover:scale-[1.02] shadow-xl">
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="p-1 bg-cta/20 rounded-full">
+                        <X className="w-4 h-4 text-cta" />
+                      </div>
+                      <p className="text-[11px] font-black uppercase tracking-[0.2em] text-cta">Important Policy — Please Note</p>
+                    </div>
+                    <p className="text-white text-sm md:text-base font-bold leading-relaxed">
+                      I do not provide <span className="text-cta">emergency call-outs, laundry, late-night check-ins, or linen services.</span>
+                    </p>
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -450,8 +467,9 @@ export default function App() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="bg-surface p-10 md:p-12 rounded-[2.5rem] shadow-lg border border-border premium-card flex flex-col"
+              className="bg-white/80 backdrop-blur-sm p-10 md:p-12 rounded-[3rem] shadow-2xl border border-cta/10 premium-card flex flex-col relative overflow-hidden group"
             >
+              <div className="absolute top-0 right-0 w-32 h-32 bg-cta/5 rounded-bl-full -mr-16 -mt-16 transition-transform group-hover:scale-110" />
               <div className="w-14 h-14 bg-cta/10 rounded-2xl flex items-center justify-center mb-8" aria-hidden="true">
                 <Sparkles className="text-cta w-7 h-7" />
               </div>
