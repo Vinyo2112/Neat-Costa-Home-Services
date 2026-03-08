@@ -383,12 +383,12 @@ export default function App() {
                   {[["1 Bedroom", "90 €"], ["2 Bedrooms", "110 €"], ["3 Bedrooms", "130 €"]].map(([size, price]) => (
                     <div key={size} className="bg-background rounded-2xl border border-border p-5 flex flex-col gap-2">
                       <div className="flex items-center justify-between gap-4">
-                        <p className="text-lg font-bold text-primary flex items-center gap-3">
-                          <CheckCircle2 className="w-5 h-5 text-accent shrink-0" aria-hidden="true" /> {size}
+                        <p className="text-xl font-bold text-primary flex items-center gap-3">
+                          <CheckCircle2 className="w-5 h-5 text-cta shrink-0" aria-hidden="true" /> {size}
                         </p>
                         <div className="text-right">
-                          <p className="text-[10px] font-bold text-muted uppercase tracking-widest mb-0.5">The Package</p>
-                          <p className="font-mono font-bold text-cta text-base leading-none">{price}</p>
+                          <p className="text-[10px] font-bold text-muted uppercase tracking-widest mb-0.5">Price</p>
+                          <p className="font-mono font-medium text-cta text-sm">{price}</p>
                         </div>
                       </div>
                       <p className="text-[10px] text-muted italic ml-8">Full cleaning + key holding & self check-in coordination</p>
@@ -450,29 +450,31 @@ export default function App() {
                   ].map((item) => (
                     <div key={item.size} className="bg-background rounded-2xl border border-border p-5 flex flex-col gap-2">
                       <div className="flex items-center justify-between gap-4">
-                        <p className="text-lg font-bold text-primary">{item.size}</p>
+                        <p className="text-xl font-bold text-primary flex items-center gap-3">
+                          <CheckCircle2 className="w-5 h-5 text-cta shrink-0" aria-hidden="true" /> {item.size}
+                        </p>
                         {item.size === "Move in/Move out clean" ? (
                           <div className="text-right">
-                            <p className="text-[10px] font-bold text-cta uppercase tracking-widest mb-0.5">Service Price</p>
-                            <p className="font-mono font-black text-cta text-base leading-none">{item.standard}</p>
+                            <p className="text-[10px] font-bold text-cta uppercase tracking-widest mb-0.5">Price</p>
+                            <p className="font-mono font-medium text-cta text-sm">{item.standard}</p>
                           </div>
                         ) : (
                           <div className="flex gap-6">
                             <div className="text-right">
                               <p className="text-[10px] font-bold text-muted uppercase tracking-widest mb-0.5">Standard</p>
-                              <p className="font-mono font-bold text-cta text-sm">{item.standard}</p>
+                              <p className="font-mono font-medium text-cta text-sm">{item.standard}</p>
                             </div>
                             <div className="text-right">
                               <p className="text-[10px] font-bold text-accent uppercase tracking-widest mb-0.5">Deep</p>
-                              <p className="font-mono font-bold text-accent text-sm">{item.deep}</p>
+                              <p className="font-mono font-medium text-accent text-sm">{item.deep}</p>
                             </div>
                           </div>
                         )}
                       </div>
                       {item.size === "Move in/Move out clean" ? (
-                        <p className="text-[10px] text-muted italic">depending on the size of the property</p>
+                        <p className="text-[10px] text-muted italic ml-8">depending on the size of the property</p>
                       ) : (
-                        <p className="text-[10px] text-muted italic">Professional cleaning for your home</p>
+                        <p className="text-[10px] text-muted italic ml-8">Professional cleaning for your home</p>
                       )}
                     </div>
                   ))}
