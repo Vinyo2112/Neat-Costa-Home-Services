@@ -95,7 +95,7 @@ export default function App() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-3 group cursor-pointer" aria-label="Neat Costa — back to top">
+          <a href="#" className="flex items-center gap-3 group cursor-pointer" aria-label="Neat Costa Home — back to top">
             <img
               src={LOGO_URL}
               alt="Neat Costa logo"
@@ -372,7 +372,6 @@ export default function App() {
               <h3 className="text-2xl font-bold text-primary mb-2">Short-Term Rental (STR) Turnovers</h3>
               <p className="text-muted mb-2 text-sm italic">Designed for long-term partnerships and guest-ready presentation.</p>
 
-
               <div className="mb-8">
                 <div className="flex items-center gap-3 mb-4">
                   <p className="text-xs font-bold text-cta uppercase tracking-widest">The Core Package</p>
@@ -448,27 +447,63 @@ export default function App() {
               <div className="space-y-6">
                 <div className="grid grid-cols-1 gap-3">
                   {[
-                    { type: "Standard Clean", price: "from 60 €", desc: "Weekly / biweekly cleaning, general tidy up, dusting & vacuuming" },
-                    { type: "Deep Clean", price: "from 90 €", desc: "Full cleaning, detailed surfaces, bathroom & kitchen deep clean" },
-                    { type: "Move-in / Move-out Clean", price: "from 130 €", desc: "Complete deep cleaning for new tenants or moving out. Depending on the size of the property." },
+                    { size: "1 Bedroom", standard: "60 €", deep: "90 €" },
+                    { size: "2 Bedrooms", standard: "85 €", deep: "120 €" },
+                    { size: "3 Bedrooms", standard: "110 €", deep: "150 €" },
+                    { size: "Move in/Move out clean", standard: "130 €", deep: "130 €" },
                   ].map((item) => (
-                    <div key={item.type} className="bg-background rounded-2xl border border-border p-5 flex flex-col gap-2">
-                      <div className="flex justify-between items-center">
-                        <p className="text-sm font-bold text-primary">{item.type}</p>
-                        <p className="font-mono font-bold text-cta text-sm">{item.price}</p>
+                    <div key={item.size} className="bg-background rounded-2xl border border-border p-4 flex flex-col gap-2">
+                      <div className="flex items-center justify-between gap-4">
+                        <p className="text-sm font-bold text-primary">{item.size}</p>
+                        <div className="flex gap-6">
+                          <div className="text-right">
+                            <p className="text-[10px] font-bold text-muted uppercase tracking-widest mb-0.5">Standard</p>
+                            <p className="font-mono font-bold text-cta text-sm">{item.standard}</p>
+                          </div>
+                          <div className="text-right">
+                            <p className="text-[10px] font-bold text-accent uppercase tracking-widest mb-0.5">Deep</p>
+                            <p className="font-mono font-bold text-accent text-sm">{item.deep}</p>
+                          </div>
+                        </div>
                       </div>
-                      <p className="text-xs text-muted leading-relaxed">
-                        • {item.desc}
-                      </p>
+                      {item.size === "Move in/Move out clean" && (
+                        <p className="text-[10px] text-muted italic">depending on the size of the property</p>
+                      )}
                     </div>
                   ))}
                 </div>
 
-                <div className="mt-auto pt-8 border-t border-border/50">
-                  <div className="bg-primary/5 p-4 rounded-2xl border border-primary/10 flex items-center gap-3">
-                    <ShieldCheck className="w-5 h-5 text-primary shrink-0" aria-hidden="true" />
-                    <p className="text-sm text-primary font-semibold">All cleaning products provided by Neat Costa.</p>
+                <div className="grid grid-cols-1 gap-4">
+                  <div className="bg-background p-5 rounded-2xl border border-border">
+                    <p className="text-xs font-bold text-cta uppercase tracking-widest mb-3">Standard Clean Includes</p>
+                    <div className="flex flex-wrap gap-2">
+                      {["General cleaning", "Dusting", "Vacuuming", "Surfaces"].map(tag => (
+                        <span key={tag} className="text-[11px] bg-surface px-2.5 py-1 rounded border border-border text-muted font-medium">{tag}</span>
+                      ))}
+                    </div>
                   </div>
+                  <div className="bg-accent/5 p-5 rounded-2xl border border-accent/20">
+                    <p className="text-xs font-bold text-accent uppercase tracking-widest mb-3">Deep Clean Also Includes</p>
+                    <div className="flex flex-wrap gap-2 mb-3">
+                      {["Degreasing", "Descaling", "Hard-to-reach areas"].map(tag => (
+                        <span key={tag} className="text-[11px] bg-surface px-2.5 py-1 rounded border border-accent/20 text-accent font-bold">{tag}</span>
+                      ))}
+                    </div>
+                    <div className="space-y-1.5">
+                      {["Ideal for seasonal or move-in cleans.", "Extra attention to buildup and corners."].map(t => (
+                        <p key={t} className="text-xs text-muted flex items-center gap-2">
+                          <CheckCircle2 className="w-3 h-3 text-accent shrink-0" aria-hidden="true" /> {t}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-auto pt-8">
+                <div className="bg-primary/5 p-4 rounded-2xl border border-primary/10 flex items-center gap-3">
+                  <ShieldCheck className="w-5 h-5 text-primary shrink-0" aria-hidden="true" />
+                  <p className="text-sm text-primary font-semibold">All cleaning products provided by Neat Costa.</p>
                 </div>
               </div>
             </motion.div>
