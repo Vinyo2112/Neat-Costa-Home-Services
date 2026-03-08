@@ -431,12 +431,12 @@ export default function App() {
                   ["Monthly Property Check", "Full inspection, photo report, maintenance suggestions", "40–60 €"],
                   ["Restocking / Replenishing", "If I need to buy products (water, snacks, coffee, WC paper, cleaning supplies) plus service fee", "Product Cost + 10–15 €"],
                 ].map(([title, desc, price]) => (
-                  <div key={title} className="flex justify-between items-start gap-4">
+                  <div key={title} className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 sm:gap-4">
                     <div>
                       <p className="font-bold text-sm text-primary">{title}</p>
                       <p className="text-xs text-muted mt-0.5">{desc}</p>
                     </div>
-                    <span className="font-mono font-bold text-cta text-sm shrink-0">{price}</span>
+                    <span className="font-mono font-bold text-cta text-sm shrink-0 sm:text-right">{price}</span>
                   </div>
                 ))}
                 <div className="bg-cta/5 p-4 rounded-xl border border-cta/10">
