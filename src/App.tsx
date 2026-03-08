@@ -493,17 +493,17 @@ export default function App() {
                       whileHover={{ scale: 1.02, x: -5 }}
                       className="bg-primary/5 rounded-2xl border border-primary/10 p-5 flex flex-col gap-2 shadow-sm transition-shadow hover:shadow-md cursor-pointer group"
                     >
-                      <div className="flex items-center justify-between gap-4">
-                        <p className="text-xl font-bold text-primary flex items-center gap-3 transition-colors group-hover:text-cta">
+                      <div className="flex items-center justify-between gap-2 md:gap-4">
+                        <p className="text-lg md:text-xl font-bold text-primary flex items-center gap-2 md:gap-3 transition-colors group-hover:text-cta">
                           <CheckCircle2 className="w-5 h-5 text-cta shrink-0" aria-hidden="true" /> {item.size}
                         </p>
                         {item.size === "Move in/Move out clean" ? (
-                          <div className="text-right">
+                          <div className="text-right shrink-0">
                             <p className="text-[10px] font-bold text-cta uppercase tracking-widest mb-0.5">Price</p>
                             <p className="font-mono font-medium text-cta text-sm">{item.standard}</p>
                           </div>
                         ) : (
-                          <div className="flex gap-6">
+                          <div className="flex gap-3 md:gap-6 shrink-0">
                             <div className="text-right">
                               <p className="text-[10px] font-bold text-muted uppercase tracking-widest mb-0.5">Standard</p>
                               <p className="font-mono font-medium text-cta text-sm">{item.standard}</p>
@@ -516,9 +516,9 @@ export default function App() {
                         )}
                       </div>
                       {item.size === "Move in/Move out clean" ? (
-                        <p className="text-[10px] text-muted italic ml-8">depending on the size of the property</p>
+                        <p className="text-[10px] text-muted italic ml-7 md:ml-8 leading-tight">depending on the size of the property</p>
                       ) : (
-                        <p className="text-[10px] text-muted italic ml-8">Professional cleaning for your home</p>
+                        <p className="text-[10px] text-muted italic ml-7 md:ml-8 leading-tight">Professional cleaning for your home</p>
                       )}
                     </motion.div>
                   ))}
