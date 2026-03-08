@@ -377,7 +377,15 @@ export default function App() {
                   <p className="text-xs font-bold text-cta uppercase tracking-widest">The Core Package</p>
                   <div className="flex-1 h-px bg-border" />
                 </div>
-                <p className="text-xs text-muted mb-5 font-medium">(Full Cleaning + Key Holding for Self Check-in)</p>
+                <p className="text-xs text-muted mb-3 font-medium">(Full Cleaning + Key Holding for Self Check-in)</p>
+                <div className="space-y-2 mb-6">
+                  <p className="text-[11px] text-muted flex items-center gap-2">
+                    <Clock className="w-3 h-3 text-cta" /> Availability: Monday–Friday, 9:00–18:00
+                  </p>
+                  <p className="text-[11px] text-accent flex items-center gap-2 font-medium">
+                    <X className="w-3 h-3 text-accent" /> No laundry, no late-night check-in, no emergency call-outs
+                  </p>
+                </div>
                 <ul className="space-y-4">
                   {[["1 Bedroom", "90 €"], ["2 Bedrooms", "110 €"], ["3 Bedrooms", "130 €"]].map(([size, price]) => (
                     <li key={size} className="flex justify-between items-center pb-4 border-b border-border/50">
@@ -393,10 +401,10 @@ export default function App() {
               <div className="mt-auto pt-8 border-t border-border/50 space-y-6">
                 <p className="text-xs font-bold text-muted uppercase tracking-wider">Extras</p>
                 {[
-                  ["Welcome Packet Setup", "Professional arrangement of guest essentials.", "15–25 €"],
-                  ["Weekly Property Check", "Photo report and airing out.", "25–35 €"],
-                  ["Monthly Property Check", "Full inspection and maintenance suggestions.", "40–60 €"],
-                  ["Restocking", "Personal shopping for guest essentials.", "10–15 €*"],
+                  ["Welcome Packet Setup", "Setup & decorative arrangement, products not included", "15–25 €"],
+                  ["Weekly Property Check", "Ventilation, minor checks, photo report", "25–35 €"],
+                  ["Monthly Property Check", "Full inspection, photo report, maintenance suggestions", "40–60 €"],
+                  ["Restocking / Replenishing", "If I need to buy products (water, snacks, coffee, etc.) plus service fee.", "Cost + 10–15 €"],
                 ].map(([title, desc, price]) => (
                   <div key={title} className="flex justify-between items-start gap-4">
                     <div>
@@ -406,10 +414,14 @@ export default function App() {
                     <span className="font-mono font-bold text-cta text-sm shrink-0">{price}</span>
                   </div>
                 ))}
-                <p className="text-xs text-muted italic">* Plus product cost</p>
+                <div className="bg-cta/5 p-4 rounded-xl border border-cta/10">
+                  <p className="text-[11px] text-muted leading-relaxed">
+                    <span className="font-bold text-cta">Tip:</span> If the host provides the products, only the <span className="font-semibold text-primary">Welcome Packet Setup</span> fee applies. If I buy the products, the <span className="font-semibold text-primary">Restocking</span> row applies.
+                  </p>
+                </div>
                 <div className="mt-8 pt-6 border-t border-border/50">
-                  <p className="text-accent/80 text-[11px] font-medium leading-relaxed">
-                    Please note: I do not provide emergency call-outs, laundry, or linen services.
+                  <p className="text-accent/80 text-[11px] font-medium leading-relaxed italic">
+                    I do not provide emergency call-outs, laundry, late-night check-ins, or linen services.
                   </p>
                 </div>
               </div>
