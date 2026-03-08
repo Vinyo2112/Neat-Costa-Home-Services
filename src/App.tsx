@@ -820,7 +820,7 @@ export default function App() {
                   I focus on a small service area to provide fast, reliable, and high-quality service—without the long drives.
                 </p>
                 <div className="mt-5 flex flex-wrap justify-center gap-4 md:gap-8 text-[10px] font-black text-muted uppercase tracking-[0.2em]">
-                  {["Professional Cleaning", "Expert Staging", "Key Holding"].map(item => (
+                  {["Professional Property Care", "Key Holding"].map(item => (
                     <span key={item} className="flex items-center gap-2">
                       <CheckCircle2 className="w-3 h-3 text-accent shrink-0" aria-hidden="true" /> {item}
                     </span>
