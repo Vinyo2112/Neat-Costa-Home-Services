@@ -404,7 +404,7 @@ export default function App() {
               <div className="mt-auto pt-8 border-t border-border/50 space-y-6">
                 <p className="text-xs font-bold text-muted uppercase tracking-wider">Optional Extras</p>
                 {[
-                  ["Welcome Packet Setup", "Setup & decorative arrangement, products not included", "15–25 €"],
+                  ["Welcome Pack Setup", "Setup & decorative arrangement, products not included", "15–25 €"],
                   ["Weekly Property Check", "Ventilation, minor checks, photo report", "25–35 €"],
                   ["Monthly Property Check", "Full inspection, photo report, maintenance suggestions", "40–60 €"],
                   ["Restocking / Replenishing", "If I need to buy products (water, snacks, coffee, WC paper, cleaning supplies) plus service fee", "Product Cost + 10–15 €"],
@@ -419,7 +419,7 @@ export default function App() {
                 ))}
                 <div className="bg-cta/5 p-4 rounded-xl border border-cta/10">
                   <p className="text-[11px] text-muted leading-relaxed">
-                    <span className="font-bold text-cta">Tip:</span> If the host provides the products, only the <span className="font-semibold text-primary">Welcome Packet Setup</span> fee applies. If I buy the products, the <span className="font-semibold text-primary">Restocking</span> row applies.
+                    <span className="font-bold text-cta">Tip:</span> If the host provides the products, only the <span className="font-semibold text-primary">Welcome Pack Setup</span> fee applies. If I buy the products, the <span className="font-semibold text-primary">Restocking</span> row applies.
                   </p>
                 </div>
                 <div className="mt-8 pt-6 border-t border-border/50">
