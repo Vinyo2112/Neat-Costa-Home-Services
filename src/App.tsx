@@ -524,16 +524,17 @@ export default function App() {
                       ))}
                     </div>
                   </div>
-                  <div className="bg-background p-4 md:p-5 rounded-2xl border border-border flex flex-col shadow-sm">
-                    <p className="text-xs font-bold text-cta uppercase tracking-widest mb-3">Deep Clean Also Includes</p>
-                    <div className="flex flex-wrap gap-2 mb-3">
+                  <div className="bg-background p-4 md:p-5 rounded-2xl border-2 border-cta/40 flex flex-col shadow-lg shadow-cta/10 relative overflow-hidden transition-all hover:border-cta/60 hover:shadow-cta/20">
+                    <div className="absolute top-0 right-0 w-24 h-24 bg-cta/5 rounded-bl-[100px] -mr-8 -mt-8" aria-hidden="true" />
+                    <p className="text-xs font-bold text-cta uppercase tracking-widest mb-3 relative z-10">Deep Clean Also Includes</p>
+                    <div className="flex flex-wrap gap-2 mb-3 relative z-10">
                       {["Degreasing", "Descaling", "Hard-to-reach areas"].map(tag => (
-                        <span key={tag} className="text-[11px] bg-cta/10 px-2.5 py-1 rounded border border-cta/20 text-cta font-bold">{tag}</span>
+                        <span key={tag} className="text-[11px] bg-white px-2.5 py-1 rounded border border-cta/20 text-cta font-bold shadow-sm">{tag}</span>
                       ))}
                     </div>
-                    <div className="space-y-1.5 mt-auto">
+                    <div className="space-y-1.5 mt-auto relative z-10">
                       {["Ideal for seasonal or move-in cleans.", "Extra attention to buildup and corners."].map(t => (
-                        <p key={t} className="text-xs text-cta flex items-center gap-2">
+                        <p key={t} className="text-xs text-cta flex items-center gap-2 font-medium">
                           <CheckCircle2 className="w-3 h-3 text-cta shrink-0" aria-hidden="true" /> {t}
                         </p>
                       ))}
