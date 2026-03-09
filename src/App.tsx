@@ -4,7 +4,7 @@ import heroImg from "./assets/hero-bg.jpg";
 import {
   MessageCircle, MapPin, Sparkles, Home, Calendar,
   CheckCircle2, Clock, ShieldCheck, Star, ArrowRight,
-  Menu, X, Quote,
+  Menu, X, Quote, Camera, Key, Users
 } from "lucide-react";
 import { useState, useEffect } from "react";
 
@@ -524,17 +524,17 @@ export default function App() {
                       ))}
                     </div>
                   </div>
-                  <div className="bg-primary p-4 md:p-5 rounded-2xl border border-primary shadow-xl">
-                    <p className="text-xs font-bold text-cta uppercase tracking-widest mb-3">Deep Clean Also Includes</p>
+                  <div className="bg-cta p-4 md:p-5 rounded-2xl shadow-xl">
+                    <p className="text-xs font-bold text-white uppercase tracking-widest mb-3">Deep Clean Also Includes</p>
                     <div className="flex flex-wrap gap-2 mb-3">
                       {["Degreasing", "Descaling", "Hard-to-reach areas"].map(tag => (
-                        <span key={tag} className="text-[11px] bg-white/10 px-2.5 py-1 rounded border border-white/20 text-white font-bold">{tag}</span>
+                        <span key={tag} className="text-[11px] bg-white/20 px-2.5 py-1 rounded border border-white/30 text-white font-bold">{tag}</span>
                       ))}
                     </div>
                     <div className="space-y-1.5">
                       {["Ideal for seasonal or move-in cleans.", "Extra attention to buildup and corners."].map(t => (
-                        <p key={t} className="text-xs text-white/80 flex items-center gap-2">
-                          <CheckCircle2 className="w-3 h-3 text-cta shrink-0" aria-hidden="true" /> {t}
+                        <p key={t} className="text-xs text-white/90 flex items-center gap-2">
+                          <CheckCircle2 className="w-3 h-3 text-white shrink-0" aria-hidden="true" /> {t}
                         </p>
                       ))}
                     </div>
@@ -574,10 +574,12 @@ export default function App() {
 
               <div className="space-y-8">
                 {[
-                  { icon: <ShieldCheck className="text-cta w-6 h-6" aria-hidden="true" />, bg: "bg-cta/10", title: "Reliable and organized", text: "Consistency you can depend on, every single time." },
-                  { icon: <Clock className="text-accent w-6 h-6" aria-hidden="true" />, bg: "bg-accent/10", title: "Detailed property checks & photo reports", text: "Complete peace of mind through transparent, visual updates." },
-                  { icon: <Home className="text-primary w-6 h-6" aria-hidden="true" />, bg: "bg-primary/10", title: "Self check-in friendly (stress-free for hosts & guests)", text: "Seamless coordination that makes hosting easier and guest arrival smoother." },
-                  { icon: <Sparkles className="text-cta w-6 h-6" aria-hidden="true" />, bg: "bg-cta/10", title: "Professional cleaning standards", text: "Guest-ready presentation that consistently earns 5-star ratings." },
+                  { icon: <Clock className="text-cta w-6 h-6" aria-hidden="true" />, bg: "bg-cta/10", title: "Reliable & Organized", text: "Your property is looked after with care and attention on every visit." },
+                  { icon: <Camera className="text-accent w-6 h-6" aria-hidden="true" />, bg: "bg-accent/10", title: "Property Checks & Photo Updates", text: "Clear updates and photos after each visit, so you always know your property is in good hands." },
+                  { icon: <Key className="text-primary w-6 h-6" aria-hidden="true" />, bg: "bg-primary/10", title: "Self Check-in Friendly", text: "Smooth coordination that makes guest arrivals simple and stress-free." },
+                  { icon: <Sparkles className="text-cta w-6 h-6" aria-hidden="true" />, bg: "bg-cta/10", title: "Professional Cleaning Standards", text: "Your property is always spotless, guest-ready, and presented to the highest standard." },
+                  { icon: <Users className="text-accent w-6 h-6" aria-hidden="true" />, bg: "bg-accent/10", title: "Personal Service", text: "You always deal directly with me — no rotating staff, no confusion." },
+                  { icon: <ShieldCheck className="text-primary w-6 h-6" aria-hidden="true" />, bg: "bg-primary/10", title: "Peace of Mind for Owners Abroad", text: "Even when you’re away, you can feel confident that your property is being looked after." },
                 ].map((item) => (
                   <div key={item.title} className="flex gap-5">
                     <div className={`shrink-0 w-12 h-12 ${item.bg} rounded-xl flex items-center justify-center`}>
