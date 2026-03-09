@@ -371,7 +371,7 @@ export default function App() {
                 <Calendar className="text-cta w-7 h-7" />
               </div>
               <h3 className="text-3xl font-bold text-primary mb-2">Short-Term Rental Turnovers</h3>
-              <p className="text-muted mb-6 text-sm italic">Peace of mind for every property owner.</p>
+              <p className="text-muted mb-6 text-sm italic">Designed for long-term partnerships and guest-ready presentation.</p>
 
               <div className="mb-8">
                 <div className="flex items-center gap-3 mb-2">
@@ -420,9 +420,9 @@ export default function App() {
                 <p className="text-xs font-bold text-muted uppercase tracking-wider">Optional Extras</p>
                 {[
                   ["Welcome Pack Setup", "Setup & decorative arrangement, products not included", "15–25 €"],
-                  ["Weekly Property Check", "Ventilation, minor checks, photo report", "25–35 €"],
+                  ["Weekly Property Check", "Airing out, minor checks, photo report", "25–35 €"],
                   ["Monthly Property Check", "Full inspection, photo report, maintenance suggestions", "40–60 €"],
-                  ["Restocking / Replenishing", "If I need to buy products (water, snacks, coffee, WC paper, cleaning supplies) plus service fee", "Product Cost + 10–15 €"],
+                  ["Restocking / Replenishing", "If I need to buy products (water, snacks, coffee, toilet paper, cleaning supplies) plus service fee", "Product Cost + 10–15 €"],
                 ].map(([title, desc, price]) => (
                   <div key={title} className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 sm:gap-4">
                     <div>
@@ -458,7 +458,7 @@ export default function App() {
                 <Sparkles className="text-cta w-7 h-7" />
               </div>
               <h3 className="text-3xl font-bold text-primary mb-2">Residential Cleaning</h3>
-              <p className="text-muted mb-6 text-sm italic">Professional care for your private residence.</p>
+              <p className="text-muted mb-6 text-sm italic">Dedicated care for your private residence.</p>
 
               <div className="space-y-6">
                 <motion.div
@@ -524,17 +524,17 @@ export default function App() {
                       ))}
                     </div>
                   </div>
-                  <div className="bg-accent/5 p-4 md:p-5 rounded-2xl border border-accent/20">
-                    <p className="text-xs font-bold text-accent uppercase tracking-widest mb-3">Deep Clean Also Includes</p>
+                  <div className="bg-primary p-4 md:p-5 rounded-2xl border border-primary shadow-xl">
+                    <p className="text-xs font-bold text-cta uppercase tracking-widest mb-3">Deep Clean Also Includes</p>
                     <div className="flex flex-wrap gap-2 mb-3">
                       {["Degreasing", "Descaling", "Hard-to-reach areas"].map(tag => (
-                        <span key={tag} className="text-[11px] bg-surface px-2.5 py-1 rounded border border-accent/20 text-accent font-bold">{tag}</span>
+                        <span key={tag} className="text-[11px] bg-white/10 px-2.5 py-1 rounded border border-white/20 text-white font-bold">{tag}</span>
                       ))}
                     </div>
                     <div className="space-y-1.5">
                       {["Ideal for seasonal or move-in cleans.", "Extra attention to buildup and corners."].map(t => (
-                        <p key={t} className="text-xs text-muted flex items-center gap-2">
-                          <CheckCircle2 className="w-3 h-3 text-accent shrink-0" aria-hidden="true" /> {t}
+                        <p key={t} className="text-xs text-white/80 flex items-center gap-2">
+                          <CheckCircle2 className="w-3 h-3 text-cta shrink-0" aria-hidden="true" /> {t}
                         </p>
                       ))}
                     </div>
