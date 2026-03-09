@@ -515,7 +515,7 @@ export default function App() {
                   ))}
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="mt-8 pt-8 border-t border-border/50 grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="bg-background p-4 md:p-5 rounded-2xl border border-border flex flex-col">
                     <p className="text-xs font-bold text-cta uppercase tracking-widest mb-3">Standard Clean Includes</p>
                     <div className="flex flex-wrap gap-2 mb-4">
@@ -524,17 +524,17 @@ export default function App() {
                       ))}
                     </div>
                   </div>
-                  <div className="bg-cta p-4 md:p-5 rounded-2xl shadow-xl flex flex-col">
-                    <p className="text-xs font-bold text-white uppercase tracking-widest mb-3">Deep Clean Also Includes</p>
+                  <div className="bg-background p-4 md:p-5 rounded-2xl border border-border flex flex-col shadow-sm">
+                    <p className="text-xs font-bold text-cta uppercase tracking-widest mb-3">Deep Clean Also Includes</p>
                     <div className="flex flex-wrap gap-2 mb-3">
                       {["Degreasing", "Descaling", "Hard-to-reach areas"].map(tag => (
-                        <span key={tag} className="text-[11px] bg-white/20 px-2.5 py-1 rounded border border-white/30 text-white font-bold">{tag}</span>
+                        <span key={tag} className="text-[11px] bg-cta/10 px-2.5 py-1 rounded border border-cta/20 text-cta font-bold">{tag}</span>
                       ))}
                     </div>
                     <div className="space-y-1.5 mt-auto">
                       {["Ideal for seasonal or move-in cleans.", "Extra attention to buildup and corners."].map(t => (
-                        <p key={t} className="text-xs text-white/90 flex items-center gap-2">
-                          <CheckCircle2 className="w-3 h-3 text-white shrink-0" aria-hidden="true" /> {t}
+                        <p key={t} className="text-xs text-cta flex items-center gap-2">
+                          <CheckCircle2 className="w-3 h-3 text-cta shrink-0" aria-hidden="true" /> {t}
                         </p>
                       ))}
                     </div>
