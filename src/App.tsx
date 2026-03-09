@@ -353,7 +353,7 @@ export default function App() {
           <div className="text-center mb-16">
             <span className="section-label">Our Expertise</span>
             <h2 className="text-4xl md:text-6xl font-bold text-primary tracking-tight">Services</h2>
-            <p className="text-muted max-w-xl mx-auto mt-4 text-base">Designed for long-term partnerships and guest-ready presentation.</p>
+            <p className="text-muted max-w-xl mx-auto mt-4 text-base">Peace of mind for every property owner.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -371,7 +371,7 @@ export default function App() {
                 <Calendar className="text-cta w-7 h-7" />
               </div>
               <h3 className="text-3xl font-bold text-primary mb-2">Short-Term Rental Turnovers</h3>
-              <p className="text-muted mb-6 text-sm italic">Designed for long-term partnerships and guest-ready presentation.</p>
+              <p className="text-muted mb-6 text-sm italic">Peace of mind for every property owner.</p>
 
               <div className="mb-8">
                 <div className="flex items-center gap-3 mb-2">
@@ -381,12 +381,6 @@ export default function App() {
                 <p className="text-sm text-muted mb-6 font-bold uppercase tracking-wide">
                   (Full Cleaning + Key Holding for Self Check-in)
                 </p>
-
-                <div className="space-y-2 mb-6">
-                  <p className="text-xs text-muted flex items-center gap-2">
-                    <Clock className="w-3.5 h-3.5 text-cta" /> Availability: Monday–Friday, 9:00–18:00
-                  </p>
-                </div>
 
                 <motion.div
                   className="grid grid-cols-1 gap-3"
@@ -417,7 +411,6 @@ export default function App() {
                           <p className="font-mono font-medium text-cta text-sm">{price}</p>
                         </div>
                       </div>
-                      <p className="text-[10px] text-muted italic ml-8">Full cleaning + key holding & self check-in coordination</p>
                     </motion.div>
                   ))}
                 </motion.div>
@@ -464,7 +457,7 @@ export default function App() {
               <div className="w-14 h-14 bg-cta/10 rounded-2xl flex items-center justify-center mb-8" aria-hidden="true">
                 <Sparkles className="text-cta w-7 h-7" />
               </div>
-              <h3 className="text-3xl font-bold text-primary mb-2">Residential Cleaning Options</h3>
+              <h3 className="text-3xl font-bold text-primary mb-2">Residential Cleaning</h3>
               <p className="text-muted mb-6 text-sm italic">Professional care for your private residence.</p>
 
               <div className="space-y-6">
@@ -515,10 +508,8 @@ export default function App() {
                           </div>
                         )}
                       </div>
-                      {item.size === "Move in/Move out clean" ? (
+                      {item.size === "Move in/Move out clean" && (
                         <p className="text-[10px] text-muted italic ml-7 md:ml-8 leading-tight">depending on the size of the property</p>
-                      ) : (
-                        <p className="text-[10px] text-muted italic ml-7 md:ml-8 leading-tight">Professional cleaning for your home</p>
                       )}
                     </motion.div>
                   ))}
