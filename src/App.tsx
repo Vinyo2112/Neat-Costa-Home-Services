@@ -461,87 +461,84 @@ export default function App() {
               <p className="text-muted mb-6 text-sm italic">Dedicated care for your private residence.</p>
 
               <div className="space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {/* Standard Clean Column */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="bg-primary/5 rounded-2xl border border-primary/10 p-5 flex flex-col hover:shadow-md transition-shadow"
-                  >
-                    <div className="mb-6">
-                      <p className="text-[10px] font-bold text-cta uppercase tracking-widest mb-1">Regular</p>
-                      <h4 className="text-xl font-bold text-primary">Standard Clean</h4>
-                    </div>
+                <motion.div
+                  className="grid grid-cols-1 gap-3"
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true }}
+                  variants={{
+                    hidden: { opacity: 0 },
+                    show: {
+                      opacity: 1,
+                      transition: { staggerChildren: 0.1 }
+                    }
+                  }}
+                >
+                  {[
+                    { size: "1 Bedroom", standard: "60 €", deep: "90 €" },
+                    { size: "2 Bedrooms", standard: "85 €", deep: "120 €" },
+                    { size: "3 Bedrooms", standard: "110 €", deep: "150 €" },
+                    { size: "Move in/Move out clean", standard: "130 €", deep: "130 €" },
+                  ].map((item) => (
+                    <motion.div
+                      key={item.size}
+                      variants={{ hidden: { opacity: 0, x: 10 }, show: { opacity: 1, x: 0 } }}
+                      whileHover={{ scale: 1.02, x: -5 }}
+                      className="bg-primary/5 rounded-2xl border border-primary/10 p-4 md:p-5 flex flex-col gap-2 shadow-sm transition-shadow hover:shadow-md cursor-pointer group"
+                    >
+                      <div className="flex items-center justify-between gap-2 md:gap-4">
+                        <p className="text-lg md:text-xl font-bold text-primary flex items-center gap-2 md:gap-3 transition-colors group-hover:text-cta">
+                          <CheckCircle2 className="w-5 h-5 text-cta shrink-0" aria-hidden="true" /> {item.size}
+                        </p>
+                        {item.size === "Move in/Move out clean" ? (
+                          <div className="text-right shrink-0">
+                            <p className="text-[10px] font-bold text-cta uppercase tracking-widest mb-0.5">Price</p>
+                            <p className="font-mono font-medium text-cta text-sm">{item.standard}</p>
+                          </div>
+                        ) : (
+                          <div className="flex gap-3 md:gap-6 shrink-0">
+                            <div className="text-right">
+                              <p className="text-[10px] font-bold text-muted uppercase tracking-widest mb-0.5">Standard</p>
+                              <p className="font-mono font-medium text-cta text-sm">{item.standard}</p>
+                            </div>
+                            <div className="text-right">
+                              <p className="text-[10px] font-bold text-accent uppercase tracking-widest mb-0.5">Deep</p>
+                              <p className="font-mono font-medium text-accent text-sm">{item.deep}</p>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                      {item.size === "Move in/Move out clean" && (
+                        <p className="text-[10px] text-muted italic ml-7 md:ml-8 leading-tight">depending on the size of the property</p>
+                      )}
+                    </motion.div>
+                  ))}
+                </motion.div>
 
-                    <div className="space-y-4 mb-8 flex-1">
-                      {[
-                        { size: "1 Bedroom", price: "60 €" },
-                        { size: "2 Bedrooms", price: "85 €" },
-                        { size: "3 Bedrooms", price: "110 €" },
-                      ].map((item) => (
-                        <div key={item.size} className="flex justify-between items-center border-b border-primary/10 pb-2">
-                          <span className="text-sm font-medium text-primary">{item.size}</span>
-                          <span className="font-mono text-cta font-bold">{item.price}</span>
-                        </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="bg-background p-4 md:p-5 rounded-2xl border border-border flex flex-col">
+                    <p className="text-xs font-bold text-cta uppercase tracking-widest mb-3">Standard Clean Includes</p>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {["General cleaning", "Dusting", "Vacuuming", "Surfaces"].map(tag => (
+                        <span key={tag} className="text-[11px] bg-surface px-2.5 py-1 rounded border border-border text-muted font-medium">{tag}</span>
                       ))}
                     </div>
-
-                    <div className="mt-auto bg-white p-3 rounded-xl border border-primary/10">
-                      <p className="text-[10px] font-bold text-muted uppercase tracking-widest mb-2">Includes</p>
-                      <div className="flex flex-wrap gap-1.5">
-                        {["General", "Dusting", "Vacuuming", "Surfaces"].map(tag => (
-                          <span key={tag} className="text-[10px] bg-primary/5 px-2 py-0.5 rounded text-muted font-medium">{tag}</span>
-                        ))}
-                      </div>
-                    </div>
-                  </motion.div>
-
-                  {/* Deep Clean Column */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.1 }}
-                    className="bg-cta rounded-2xl shadow-xl p-5 flex flex-col hover:-translate-y-1 transition-transform"
-                  >
-                    <div className="mb-6">
-                      <p className="text-[10px] font-bold text-white/80 uppercase tracking-widest mb-1">Thorough</p>
-                      <h4 className="text-xl font-bold text-white">Deep Clean</h4>
-                    </div>
-
-                    <div className="space-y-4 mb-8 flex-1">
-                      {[
-                        { size: "1 Bedroom", price: "90 €" },
-                        { size: "2 Bedrooms", price: "120 €" },
-                        { size: "3 Bedrooms", price: "150 €" },
-                      ].map((item) => (
-                        <div key={item.size} className="flex justify-between items-center border-b border-white/20 pb-2">
-                          <span className="text-sm font-medium text-white">{item.size}</span>
-                          <span className="font-mono text-white font-bold">{item.price}</span>
-                        </div>
-                      ))}
-                    </div>
-
-                    <div className="mt-auto bg-white/10 p-3 rounded-xl border border-white/20">
-                      <p className="text-[10px] font-bold text-white/90 uppercase tracking-widest mb-2">Also Includes</p>
-                      <div className="flex flex-wrap gap-1.5">
-                        {["Degreasing", "Descaling", "Corners"].map(tag => (
-                          <span key={tag} className="text-[10px] bg-white/20 px-2 py-0.5 rounded text-white font-medium">{tag}</span>
-                        ))}
-                      </div>
-                    </div>
-                  </motion.div>
-                </div>
-
-                <div className="bg-background rounded-2xl border border-border p-4 flex justify-between items-center group hover:border-cta/30 transition-colors">
-                  <div>
-                    <p className="text-sm font-bold text-primary flex items-center gap-2">
-                      Move in/Move out clean
-                    </p>
-                    <p className="text-[10px] text-muted italic leading-tight mt-0.5">depending on the size of the property</p>
                   </div>
-                  <span className="font-mono font-bold text-cta">130 €</span>
+                  <div className="bg-cta p-4 md:p-5 rounded-2xl shadow-xl flex flex-col">
+                    <p className="text-xs font-bold text-white uppercase tracking-widest mb-3">Deep Clean Also Includes</p>
+                    <div className="flex flex-wrap gap-2 mb-3">
+                      {["Degreasing", "Descaling", "Hard-to-reach areas"].map(tag => (
+                        <span key={tag} className="text-[11px] bg-white/20 px-2.5 py-1 rounded border border-white/30 text-white font-bold">{tag}</span>
+                      ))}
+                    </div>
+                    <div className="space-y-1.5 mt-auto">
+                      {["Ideal for seasonal or move-in cleans.", "Extra attention to buildup and corners."].map(t => (
+                        <p key={t} className="text-xs text-white/90 flex items-center gap-2">
+                          <CheckCircle2 className="w-3 h-3 text-white shrink-0" aria-hidden="true" /> {t}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
 
