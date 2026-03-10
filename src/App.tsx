@@ -521,30 +521,24 @@ export default function App() {
                     <div className="hidden md:block absolute top-8 bottom-8 left-1/2 w-px bg-border" aria-hidden="true" />
 
                     <div className="flex-1 md:pr-10 mb-8 md:mb-0">
-                      <p className="font-mono text-[15px] font-medium text-primary uppercase tracking-wide mb-5">Standard Clean</p>
-                      <ul className="space-y-2.5">
-                        {["General cleaning", "Dusting", "Vacuuming", "Surfaces"].map(item => (
-                          <li key={item} className="flex items-center gap-3">
-                            <span className="text-primary font-medium text-lg">✓</span>
-                            <span className="text-[15px] text-muted font-mono">{item}</span>
-                          </li>
+                      <p className="text-xs font-bold text-cta uppercase tracking-widest mb-4">Standard Clean</p>
+                      <div className="flex flex-wrap gap-2">
+                        {["General cleaning", "Dusting", "Vacuuming", "Surfaces"].map(tag => (
+                          <span key={tag} className="text-[11px] bg-surface px-2.5 py-1 rounded border border-border text-muted font-medium">{tag}</span>
                         ))}
-                      </ul>
+                      </div>
                     </div>
 
                     {/* Horizontal line for mobile */}
                     <div className="md:hidden w-full h-px bg-border mb-8" aria-hidden="true" />
 
                     <div className="flex-1 md:pl-10">
-                      <p className="font-mono text-[15px] font-medium text-primary uppercase tracking-wide mb-5">Deep Clean</p>
-                      <ul className="space-y-2.5">
-                        {["General cleaning", "Dusting", "Vacuuming", "Surfaces", "Degreasing", "Descaling", "Hard-to-reach areas"].map(item => (
-                          <li key={item} className="flex items-center gap-3">
-                            <span className="text-primary font-medium text-lg">✓</span>
-                            <span className="text-[15px] text-muted font-mono">{item}</span>
-                          </li>
+                      <p className="text-xs font-bold text-cta uppercase tracking-widest mb-4 relative z-10">Deep Clean</p>
+                      <div className="flex flex-wrap gap-2 relative z-10">
+                        {["General cleaning", "Dusting", "Vacuuming", "Surfaces", "Degreasing", "Descaling", "Hard-to-reach areas"].map(tag => (
+                          <span key={tag} className="text-[11px] bg-white px-2.5 py-1 rounded border border-cta/20 text-cta font-bold shadow-sm">{tag}</span>
                         ))}
-                      </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
