@@ -314,7 +314,7 @@ export default function App() {
                 My name is <span className="font-bold text-primary">Gizella</span>, and I am the person behind Neat Costa Home Services. I provide reliable, detail-focused residential cleaning and short-term rental services for private homes and holiday properties along the Costa del Sol.
               </p>
               <p>
-                I work independently, which means your property is always handled personally by me. There are no rotating teams and no confusion — just clear communication, punctual service, and consistent attention to detail.
+                I work independently, which means your property is always handled personally by me. There are no rotating teams and no confusion — just clear communication, punctual service, and careful attention to detail.
               </p>
               <p>
                 My goal is simple: to help homeowners keep their properties clean, well cared for, and ready at all times. Whether it’s a private residence or a holiday rental, you can feel confident that your property is in trustworthy hands.
@@ -667,11 +667,7 @@ export default function App() {
                 <Sparkles className="w-3 h-3" aria-hidden="true" />
                 Limited Availability
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-primary tracking-tight leading-snug">
-                Ready to elevate your<br className="hidden md:block" /> property's potential?
-              </h2>
               <p className="text-muted text-base leading-relaxed">
-                Ready to elevate your property’s potential?<br />
                 Message me directly on WhatsApp to discuss your property and how I can assist.
               </p>
               <div className="flex flex-wrap justify-center lg:justify-start gap-5">
