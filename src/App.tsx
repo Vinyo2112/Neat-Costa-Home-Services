@@ -667,6 +667,9 @@ export default function App() {
                 <Sparkles className="w-3 h-3" aria-hidden="true" />
                 Limited Availability
               </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-primary tracking-tight leading-snug">
+                Ready to elevate your<br className="hidden md:block" /> property’s potential?
+              </h2>
               <p className="text-muted text-base leading-relaxed">
                 Message me directly on WhatsApp to discuss your property and how I can assist.
               </p>
