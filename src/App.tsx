@@ -419,12 +419,12 @@ export default function App() {
               <div className="mt-auto pt-8 border-t border-border/50 space-y-6">
 
                 {/* Cleaning type descriptions */}
-                <div className="bg-background rounded-[2rem] p-6 md:p-8 flex flex-col md:flex-row relative border border-border shadow-sm">
+                <div className="bg-background rounded-2xl p-4 md:p-6 flex flex-col md:flex-row relative border border-border shadow-sm">
                   {/* Vertical divider desktop */}
-                  <div className="hidden md:block absolute top-8 bottom-8 left-1/2 w-px bg-border" aria-hidden="true" />
+                  <div className="hidden md:block absolute top-4 bottom-4 left-1/2 w-px bg-border" aria-hidden="true" />
 
-                  <div className="flex-1 md:pr-10 mb-8 md:mb-0">
-                    <p className="text-xs font-bold text-cta uppercase tracking-widest mb-4">Standard Cleaning</p>
+                  <div className="flex-1 md:pr-8 mb-4 md:mb-0">
+                    <p className="text-xs font-bold text-cta uppercase tracking-widest mb-2">Standard Cleaning</p>
                     <div className="flex flex-wrap gap-2">
                       {["Kitchen & bathrooms", "Surface dusting", "Disinfection", "Vacuuming & mopping", "Linen & towel change"].map(tag => (
                         <span key={tag} className="text-[11px] bg-surface px-2.5 py-1 rounded border border-border text-muted font-medium">{tag}</span>
@@ -435,8 +435,8 @@ export default function App() {
                   {/* Horizontal divider mobile */}
                   <div className="md:hidden w-full h-px bg-border mb-8" aria-hidden="true" />
 
-                  <div className="flex-1 md:pl-10">
-                    <p className="text-xs font-bold text-cta uppercase tracking-widest mb-4 relative z-10">Deep Cleaning</p>
+                  <div className="flex-1 md:pl-8">
+                    <p className="text-xs font-bold text-cta uppercase tracking-widest mb-2 relative z-10">Deep Cleaning</p>
                     <div className="flex flex-wrap gap-2 relative z-10">
                       {["Steam cleaning", "Oven & fridge", "Heavy limescale", "Behind furniture", "Walls & doors", "Upon request"].map(tag => (
                         <span key={tag} className="text-[11px] bg-white px-2.5 py-1 rounded border border-cta/20 text-cta font-bold shadow-sm">{tag}</span>
