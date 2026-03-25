@@ -379,7 +379,7 @@ export default function App() {
                   <div className="flex-1 h-px bg-border" />
                 </div>
                 <p className="text-sm text-muted mb-6 font-bold uppercase tracking-wide">
-                  (Full Cleaning + Key Holding for Self Check-in)
+                  (Standard Turnover Cleaning + Key Holding for Self Check-in)
                 </p>
 
                 <motion.div
@@ -417,12 +417,35 @@ export default function App() {
               </div>
 
               <div className="mt-auto pt-8 border-t border-border/50 space-y-6">
+
+                {/* Cleaning type descriptions */}
+                <div className="space-y-4">
+                  <div className="bg-primary/5 rounded-2xl border border-primary/10 p-4">
+                    <p className="font-bold text-sm text-primary mb-2">Standard cleaning</p>
+                    <p className="text-xs font-semibold text-muted mb-1">Includes:</p>
+                    <ul className="text-xs text-muted space-y-1 list-disc list-inside">
+                      <li>Kitchen &amp; bathroom cleaning</li>
+                      <li>Surface dusting &amp; disinfection</li>
+                      <li>Floor vacuuming &amp; mopping</li>
+                      <li>Linen &amp; towel change</li>
+                    </ul>
+                  </div>
+                  <div className="bg-primary/5 rounded-2xl border border-primary/10 p-4">
+                    <p className="font-bold text-sm text-primary mb-2">Deep cleaning</p>
+                    <p className="text-xs text-muted leading-relaxed">
+                      • Deep Cleaning available upon request – includes professional steam cleaning for ovens, fridge, heavy limescale, furniture behind/under, walls &amp; doors. Window cleaning can be included at an additional cost if requested.
+                    </p>
+                  </div>
+                </div>
+
                 <p className="text-xs font-bold text-muted uppercase tracking-wider">Optional Extras</p>
                 {[
                   ["Welcome Pack Setup", "Setup & decorative arrangement, products not included", "15–25 €"],
                   ["Weekly Property Check", "Airing out, minor checks, photo report", "25–35 €"],
                   ["Monthly Property Check", "Full inspection, photo report, maintenance suggestions", "40–60 €"],
                   ["Restocking / Replenishing", "If I need to buy products (water, snacks, coffee, toilet paper, cleaning supplies) plus service fee", "Product Cost + 10–15 €"],
+                  ["Window & Frame Cleaning", "Streak-free interior/exterior window and frame cleaning", "25–50 €"],
+                  ["🧺 Laundry Service (washing & drying)", "from €25–30 per load — Ironing is not included. Extras are not included in standard or deep cleaning services.", "from 25–30 €"],
                 ].map(([title, desc, price]) => (
                   <div key={title} className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 sm:gap-4">
                     <div>
@@ -439,7 +462,7 @@ export default function App() {
                 </div>
                 <div className="mt-8 pt-6 border-t border-border/50">
                   <p className="text-primary text-sm md:text-base font-bold leading-relaxed italic text-center">
-                    <span className="text-cta">Please Note:</span> I do not provide emergency call-outs, laundry, late-night check-ins, or linen services.
+                    <span className="text-cta">Please Note:</span> I do not provide emergency call-outs, ironing, or late-night check-ins.
                   </p>
                 </div>
               </div>
@@ -552,6 +575,45 @@ export default function App() {
               </div>
             </motion.div>
           </div>
+
+          {/* ── Premium Steam & Extraction Cleaning ── */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.15 }}
+            className="mt-10 bg-white/80 backdrop-blur-sm px-5 py-8 md:p-12 rounded-[2.5rem] md:rounded-[3rem] shadow-2xl border border-cta/10 premium-card relative overflow-hidden group"
+          >
+            <div className="absolute top-0 right-0 w-40 h-40 bg-cta/5 rounded-bl-full -mr-20 -mt-20 transition-transform group-hover:scale-110" />
+            <div className="w-14 h-14 bg-cta/10 rounded-2xl flex items-center justify-center mb-6" aria-hidden="true">
+              <Sparkles className="text-cta w-7 h-7" />
+            </div>
+            <h3 className="text-3xl font-bold text-primary mb-3">Premium Steam &amp; Extraction Cleaning</h3>
+            <p className="text-muted text-base leading-relaxed mb-6 max-w-3xl">
+              Give your home or rental property the ultimate hygienic refresh with chemical-free steam and extraction cleaning. Ideal for both private residences and short-term rental properties, this premium service reaches every surface, upholstery, and hard-to-reach area, ensuring a spotless, allergen-free, and guest-ready environment.
+            </p>
+            <p className="text-sm font-bold text-primary mb-3">Perfect for:</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6">
+              {[
+                "Sofas & armchairs – deep hygienic refresh with steam + extraction",
+                "Mattresses – removal of dust, allergens, and bacteria",
+                "Surfaces – all touchpoints, counters, shelves, and high-contact areas",
+                "Hard-to-reach areas – vents, corners, behind furniture",
+                "Kitchens & bathrooms – steam disinfecting and degreasing for truly hygienic surfaces",
+                "Floors & tiles – enhanced cleanliness without harsh chemicals",
+                "Windows & frames – streak-free cleaning for sparkling windows and clean frames",
+              ].map((item) => (
+                <div key={item} className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-cta shrink-0 mt-0.5" aria-hidden="true" />
+                  <p className="text-sm text-muted">{item}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-sm font-semibold text-cta italic">
+              Available upon request at fair rates – tailored to your property's size and needs.
+            </p>
+          </motion.div>
+
         </div>
       </section>
 
