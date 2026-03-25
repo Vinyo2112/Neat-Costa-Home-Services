@@ -423,19 +423,17 @@ export default function App() {
                   <div className="bg-background rounded-xl border border-border p-3 shadow-sm">
                     <p className="text-[10px] font-bold text-cta uppercase tracking-widest mb-2">Standard Cleaning</p>
                     <div className="flex flex-wrap gap-1.5">
-                      {["Kitchen & bathrooms", "Surface dusting", "Disinfection", "Vacuuming & mopping", "Linen & towel change"].map(tag => (
+                      {["Kitchen & bathroom cleaning", "Surface dusting & disinfection", "Floor vacuuming & mopping", "Linen & towel change"].map(tag => (
                         <span key={tag} className="text-[10px] bg-surface px-2 py-0.5 rounded border border-border text-muted font-medium">{tag}</span>
                       ))}
                     </div>
                   </div>
                   <div className="bg-background rounded-xl border border-border p-3 shadow-sm">
                     <p className="text-[10px] font-bold text-cta uppercase tracking-widest mb-2">Deep Cleaning</p>
-                    <div className="flex flex-wrap gap-1.5">
-                      {["Kitchen & bathrooms", "Surface dusting", "Disinfection", "Vacuuming & mopping", "Linen & towel change", "Steam cleaning", "Oven & fridge", "Heavy limescale", "Behind furniture", "Walls & doors"].map(tag => (
-                        <span key={tag} className="text-[10px] bg-white px-2 py-0.5 rounded border border-cta/20 text-cta font-bold shadow-sm">{tag}</span>
-                      ))}
-                    </div>
-                    <p className="text-[10px] text-muted mt-2 leading-relaxed italic">Upon request · Window cleaning available at additional cost.</p>
+                    <p className="text-[10px] text-muted leading-relaxed">
+                      <span className="font-bold text-white bg-cta/80 px-1.5 py-0.5 rounded mr-1">Upon request</span>
+                      Includes professional steam cleaning for ovens, fridge, heavy limescale, furniture behind/under, walls &amp; doors. Window cleaning can be included at an additional cost if requested.
+                    </p>
                   </div>
                 </div>
 
