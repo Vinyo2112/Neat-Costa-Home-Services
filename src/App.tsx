@@ -537,31 +537,26 @@ export default function App() {
                   ))}
                 </motion.div>
 
-                <div className="mt-8 pt-8 border-t border-border/50">
-                  <div className="bg-background rounded-[2rem] p-6 md:p-8 flex flex-col md:flex-row relative border border-border shadow-sm">
-                    {/* Vertical line for desktop */}
-                    <div className="hidden md:block absolute top-8 bottom-8 left-1/2 w-px bg-border" aria-hidden="true" />
-
-                    <div className="flex-1 md:pr-10 mb-8 md:mb-0">
-                      <p className="text-xs font-bold text-cta uppercase tracking-widest mb-4">Standard Clean</p>
-                      <div className="flex flex-wrap gap-2">
-                        {["General cleaning", "Dusting", "Vacuuming", "Surfaces"].map(tag => (
-                          <span key={tag} className="text-[11px] bg-surface px-2.5 py-1 rounded border border-border text-muted font-medium">{tag}</span>
-                        ))}
-                      </div>
+                <div className="mt-8 pt-8 border-t border-border/50 space-y-3">
+                  <div className="bg-background rounded-xl border border-border p-4 shadow-sm">
+                    <p className="text-xs font-bold text-cta uppercase tracking-widest mb-3">Standard Clean</p>
+                    <div className="flex flex-wrap gap-2">
+                      {["Kitchen & bathroom cleaning", "Surface dusting & disinfection", "Floor vacuuming & mopping", "Linen & towel change", "General cleaning", "Dusting", "Vacuuming", "Surfaces"].map(tag => (
+                        <span key={tag} className="text-xs bg-surface px-2.5 py-1 rounded border border-border text-muted font-medium">{tag}</span>
+                      ))}
                     </div>
-
-                    {/* Horizontal line for mobile */}
-                    <div className="md:hidden w-full h-px bg-border mb-8" aria-hidden="true" />
-
-                    <div className="flex-1 md:pl-10">
-                      <p className="text-xs font-bold text-cta uppercase tracking-widest mb-4 relative z-10">Deep Clean</p>
-                      <div className="flex flex-wrap gap-2 relative z-10">
-                        {["General cleaning", "Dusting", "Vacuuming", "Surfaces", "Degreasing", "Descaling", "Hard-to-reach areas"].map(tag => (
-                          <span key={tag} className="text-[11px] bg-white px-2.5 py-1 rounded border border-cta/20 text-cta font-bold shadow-sm">{tag}</span>
-                        ))}
-                      </div>
+                  </div>
+                  <div className="bg-background rounded-xl border border-border p-4 shadow-sm">
+                    <p className="text-xs font-bold text-cta uppercase tracking-widest mb-3">Deep Clean</p>
+                    <div className="flex flex-wrap gap-2">
+                      {["General cleaning", "Dusting", "Vacuuming", "Surfaces", "Degreasing", "Descaling", "Hard-to-reach areas"].map(tag => (
+                        <span key={tag} className="text-xs bg-white px-2.5 py-1 rounded border border-cta/20 text-cta font-bold shadow-sm">{tag}</span>
+                      ))}
                     </div>
+                    <p className="text-xs text-muted leading-relaxed mt-3">
+                      <span className="font-bold text-white bg-cta/80 px-1.5 py-0.5 rounded mr-1">Upon request</span>
+                      Includes professional steam cleaning for ovens, fridge, heavy limescale, furniture behind/under, walls &amp; doors. Window cleaning can be included at an additional cost if requested.
+                    </p>
                   </div>
                 </div>
               </div>
