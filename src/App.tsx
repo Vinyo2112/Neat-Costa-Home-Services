@@ -421,16 +421,16 @@ export default function App() {
                 {/* Cleaning type descriptions */}
                 <div className="space-y-3">
                   <div className="bg-background rounded-xl border border-border p-3 shadow-sm">
-                    <p className="text-[10px] font-bold text-cta uppercase tracking-widest mb-2">Standard Cleaning</p>
+                    <p className="text-xs font-bold text-cta uppercase tracking-widest mb-2">Standard Cleaning</p>
                     <div className="flex flex-wrap gap-1.5">
                       {["Kitchen & bathroom cleaning", "Surface dusting & disinfection", "Floor vacuuming & mopping", "Linen & towel change"].map(tag => (
-                        <span key={tag} className="text-[10px] bg-surface px-2 py-0.5 rounded border border-border text-muted font-medium">{tag}</span>
+                        <span key={tag} className="text-xs bg-surface px-2.5 py-1 rounded border border-border text-muted font-medium">{tag}</span>
                       ))}
                     </div>
                   </div>
                   <div className="bg-background rounded-xl border border-border p-3 shadow-sm">
-                    <p className="text-[10px] font-bold text-cta uppercase tracking-widest mb-2">Deep Cleaning</p>
-                    <p className="text-[10px] text-muted leading-relaxed">
+                    <p className="text-xs font-bold text-cta uppercase tracking-widest mb-2">Deep Cleaning</p>
+                    <p className="text-xs text-muted leading-relaxed">
                       <span className="font-bold text-white bg-cta/80 px-1.5 py-0.5 rounded mr-1">Upon request</span>
                       Includes professional steam cleaning for ovens, fridge, heavy limescale, furniture behind/under, walls &amp; doors. Window cleaning can be included at an additional cost if requested.
                     </p>
@@ -444,7 +444,7 @@ export default function App() {
                   ["Monthly Property Check", "Full inspection, photo report, maintenance suggestions", "40–60 €"],
                   ["Restocking / Replenishing", "If I need to buy products (water, snacks, coffee, toilet paper, cleaning supplies) plus service fee", "Product Cost + 10–15 €"],
                   ["Window & Frame Cleaning", "Streak-free interior/exterior window and frame cleaning", "25–50 €"],
-                  ["Laundry Service (washing & drying)", "from €25–30 per load — Ironing is not included. Extras are not included in standard or deep cleaning services.", "from 25–30 €"],
+                  ["Laundry Service (washing & drying)", "from €25–30 per load — Ironing is not included.", "from 25–30 €"],
                 ].map(([title, desc, price]) => (
                   <div key={title} className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 sm:gap-4">
                     <div>
@@ -461,7 +461,7 @@ export default function App() {
                 </div>
                 <div className="mt-8 pt-6 border-t border-border/50">
                   <p className="text-primary text-sm md:text-base font-bold leading-relaxed italic text-center">
-                    <span className="text-cta">Please Note:</span> I do not provide emergency call-outs, ironing, or late-night check-ins.
+                    <span className="text-cta">Please Note:</span> I do not provide emergency call-outs, ironing, or late-night check-ins. Extras are not included in standard or deep cleaning services.
                   </p>
                 </div>
               </div>
