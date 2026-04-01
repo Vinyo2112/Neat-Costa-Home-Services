@@ -541,7 +541,7 @@ export default function App() {
                   <div className="bg-background rounded-xl border border-border p-4 shadow-sm">
                     <p className="text-xs font-bold text-cta uppercase tracking-widest mb-3">Standard Clean</p>
                     <div className="flex flex-wrap gap-2">
-                      {["Kitchen & bathroom cleaning", "Surface dusting & disinfection", "Floor vacuuming & mopping", "Linen & towel change"].map(tag => (
+                      {["Kitchen & bathroom cleaning", "Surface dusting & disinfection", "Floor vacuuming & mopping"].map(tag => (
                         <span key={tag} className="text-xs bg-surface px-2.5 py-1 rounded border border-border text-muted font-medium">{tag}</span>
                       ))}
                     </div>
