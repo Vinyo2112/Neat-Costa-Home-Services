@@ -181,7 +181,7 @@ export default function App() {
         <div className="absolute inset-0 z-0">
           <img
             src={heroImg}
-            alt="Premium cleaning service La Cala de Mijas Costa del Sol — hero view of the coastline"
+            alt="Beautiful Costa del Sol coastline and beach"
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />
@@ -200,13 +200,13 @@ export default function App() {
           </div>
 
           <h1 className="flex flex-col gap-1 text-white mb-8 drop-shadow-lg font-sans">
-            <span className="text-5xl md:text-7xl font-bold uppercase tracking-tight">Reliable Home &amp;</span>
-            <span className="text-3xl md:text-5xl font-normal text-white/90">Airbnb Cleaning Service in La Cala de Mijas</span>
+            <span className="text-5xl md:text-7xl font-bold uppercase tracking-tight">Neat Costa</span>
+            <span className="text-3xl md:text-5xl font-normal text-white/90">Home Services</span>
           </h1>
 
           <p className="text-lg md:text-xl text-white/85 font-light mb-10 max-w-2xl mx-auto leading-relaxed">
-            Residential cleaning and Airbnb turnover service on the Costa del Sol<br />
-            Personally handled by Gizella — photo updates after every single visit
+            Reliable Home & Airbnb Services on the Costa del Sol<br />
+            Personal, detail-focused care for your private home or holiday rental
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -278,7 +278,7 @@ export default function App() {
           >
             <img
               src={aboutImg}
-              alt="Airbnb turnover cleaning Mijas Costa — beautifully maintained apartment on the Costa del Sol"
+              alt="Stylish modern apartment on the Costa del Sol"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               referrerPolicy="no-referrer"
             />
@@ -352,8 +352,8 @@ export default function App() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <span className="section-label">Our Expertise</span>
-            <h2 className="text-4xl md:text-6xl font-bold text-primary tracking-tight">Services &amp; Pricing</h2>
-            <p className="text-muted max-w-xl mx-auto mt-4 text-base">Cleaning service La Cala de Mijas &amp; Mijas Costa — peace of mind for every property owner.</p>
+            <h2 className="text-4xl md:text-6xl font-bold text-primary tracking-tight">Services</h2>
+            <p className="text-muted max-w-xl mx-auto mt-4 text-base">Peace of mind for every property owner.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -686,7 +686,7 @@ export default function App() {
               <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl aspect-square">
                 <img
                   src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=800"
-                  alt="Key holding service La Cala de Mijas — self check-in coordination for holiday rentals on the Costa del Sol"
+                  alt="Key handover service for Airbnb property management"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
                 />
