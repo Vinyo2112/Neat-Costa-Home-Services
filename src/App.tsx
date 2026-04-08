@@ -181,7 +181,7 @@ export default function App() {
         <div className="absolute inset-0 z-0">
           <img
             src={heroImg}
-            alt="Beautiful Costa del Sol coastline and beach"
+            alt="premium cleaning service La Cala de Mijas Costa del Sol"
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />
@@ -200,8 +200,8 @@ export default function App() {
           </div>
 
           <h1 className="flex flex-col gap-1 text-white mb-8 drop-shadow-lg font-sans">
-            <span className="text-5xl md:text-7xl font-bold uppercase tracking-tight">Neat Costa</span>
-            <span className="text-3xl md:text-5xl font-normal text-white/90">Home Services</span>
+            <span className="text-3xl md:text-6xl font-bold uppercase tracking-tight">Reliable Home & Airbnb</span>
+            <span className="text-2xl md:text-4xl font-normal text-white/90">Cleaning Service in La Cala de Mijas</span>
           </h1>
 
           <p className="text-lg md:text-xl text-white/85 font-light mb-10 max-w-2xl mx-auto leading-relaxed">
@@ -278,7 +278,7 @@ export default function App() {
           >
             <img
               src={aboutImg}
-              alt="Stylish modern apartment on the Costa del Sol"
+              alt="Airbnb turnover cleaning Mijas Costa"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               referrerPolicy="no-referrer"
             />
@@ -352,7 +352,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <span className="section-label">Our Expertise</span>
-            <h2 className="text-4xl md:text-6xl font-bold text-primary tracking-tight">Services</h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-primary tracking-tight">Services & Pricing</h2>
             <p className="text-muted max-w-xl mx-auto mt-4 text-base">Peace of mind for every property owner.</p>
           </div>
 
@@ -686,7 +686,7 @@ export default function App() {
               <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl aspect-square">
                 <img
                   src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=800"
-                  alt="Key handover service for Airbnb property management"
+                  alt="key holding service La Cala de Mijas"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
                 />
