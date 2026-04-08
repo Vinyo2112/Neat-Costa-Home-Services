@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "neatcosta.es"
+        }
+      ],
+      "destination": "https://www.neatcosta.es/$1",
+      "permanent": true
+    }
+  ]
+}
