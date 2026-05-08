@@ -9,7 +9,7 @@ import {
 import { useState, useEffect } from "react";
 
 /* ─── Constants ──────────────────────────────────────────────────── */
-const WHATSAPP_NUMBER = "34604492386";
+const WHATSAPP_NUMBER = "34691714064";
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20Gizella%2C%20I%27m%20interested%20in%20your%20property%20care%20services!`;
 const LOGO_URL = "https://drive.google.com/thumbnail?id=1Pq3x-n_X_Hy8J6aOK7nVCK5TksdoOBKf&sz=w1000";
 
@@ -950,6 +950,13 @@ export default function App() {
               <svg className="w-4 h-4 text-white fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg>
             </a>
           </div>
+
+          <a
+            href="mailto:neatcosta@gmail.com"
+            className="text-white/50 hover:text-white text-xs font-bold tracking-widest transition-colors duration-200 cursor-pointer"
+          >
+            neatcosta@gmail.com
+          </a>
 
           <p className="text-white/30 text-xs">
             © {new Date().getFullYear()} Neat Costa Home Services · La Cala de Mijas, Costa del Sol · All rights reserved.
