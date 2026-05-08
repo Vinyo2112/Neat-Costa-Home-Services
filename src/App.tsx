@@ -1,6 +1,7 @@
 import { motion, useScroll, useSpring, AnimatePresence } from "motion/react";
 import aboutImg from "./assets/coastal-villas.jpg";
 import heroImg from "./assets/hero-bg.jpg";
+import gizellaImg from "/gizella-portrait.jpg";
 import {
   MessageCircle, MapPin, Sparkles, Home, Calendar,
   CheckCircle2, Clock, ShieldCheck, Star, ArrowRight,
@@ -276,20 +277,34 @@ export default function App() {
             transition={{ duration: 0.6 }}
             className="relative h-[520px] rounded-[2.5rem] overflow-hidden shadow-2xl group"
           >
+            {/* Background coastal photo */}
             <img
               src={aboutImg}
               alt="Airbnb turnover cleaning Mijas Costa"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               referrerPolicy="no-referrer"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/70 to-transparent" />
-            <div className="absolute bottom-8 left-8 right-8 glass p-5 rounded-2xl">
-              <div className="flex items-center gap-2 mb-2">
-                <div className="w-2 h-2 bg-cta rounded-full" aria-hidden="true" />
-                <p className="text-[10px] font-bold uppercase tracking-widest text-primary/70">Personal Service</p>
+            <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent" />
+
+            {/* Glassmorphism card with portrait */}
+            <div className="absolute bottom-6 left-6 right-6 glass p-4 rounded-2xl flex items-center gap-4">
+              {/* Gizella portrait circle */}
+              <div className="shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-cta/60 shadow-lg shadow-primary/40">
+                <img
+                  src={gizellaImg}
+                  alt="Gizella – owner of Neat Costa Home Services"
+                  className="w-full h-full object-cover object-top"
+                />
               </div>
-              <p className="text-xl font-bold text-primary font-sans">Handled by Gizella</p>
-              <p className="text-sm text-muted mt-1">Consistency you can depend on.</p>
+              {/* Text */}
+              <div>
+                <div className="flex items-center gap-2 mb-1">
+                  <div className="w-2 h-2 bg-cta rounded-full" aria-hidden="true" />
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-primary/70">Personal Service</p>
+                </div>
+                <p className="text-lg font-bold text-primary font-sans leading-tight">Gizella</p>
+                <p className="text-xs text-muted mt-0.5">Owner &amp; sole operator</p>
+              </div>
             </div>
           </motion.div>
 
