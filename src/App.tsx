@@ -128,6 +128,10 @@ export default function App() {
             >
               Book Now
             </a>
+            {/* Google Translate – desktop */}
+            <div className="custom-translate-wrapper">
+              <div id="google_translate_element" />
+            </div>
           </div>
 
           {/* Mobile toggle */}
@@ -170,6 +174,10 @@ export default function App() {
               >
                 Book Now via WhatsApp
               </a>
+              {/* Google Translate – mobile */}
+              <div className="custom-translate-wrapper custom-translate-wrapper--mobile">
+                <div id="google_translate_element_mobile" />
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
