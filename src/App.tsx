@@ -80,37 +80,36 @@ export default function App() {
       // @ts-ignore
       if (window.google && window.google.translate) {
         // @ts-ignore
-        new window.google.translate.TranslateElement({
-          pageLanguage: 'en',
-          includedLanguages: 'es',
-          layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE
-        }, 'google_translate_element');
+        if (document.getElementById('google_translate_element')) {
+          // @ts-ignore
+          new window.google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'es',
+            layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE
+          }, 'google_translate_element');
+        }
         
         // @ts-ignore
-        new window.google.translate.TranslateElement({
-          pageLanguage: 'en',
-          includedLanguages: 'es',
-          layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE
-        }, 'google_translate_element_mobile');
+        if (document.getElementById('google_translate_element_mobile')) {
+          // @ts-ignore
+          new window.google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'es',
+            layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE
+          }, 'google_translate_element_mobile');
+        }
       }
     };
 
-    // 2. Inject the script only if it hasn't been added yet
-    const existingScript = document.getElementById('google-translate-script');
-    if (!existingScript) {
-      const script = document.createElement('script');
-      script.id = 'google-translate-script';
-      script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-      script.async = true;
-      document.body.appendChild(script);
-    } else {
-      // If script exists, manually trigger init if elements are ready
-      // @ts-ignore
-      if (window.google && window.google.translate) {
-        // @ts-ignore
-        window.googleTranslateElementInit();
-      }
-    }
+    // 2. Inject the script
+    const script = document.createElement('script');
+    script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      // Cleanup script if needed, though usually Google Translate is better left alone
+    };
   }, []);
 
   // Close mobile menu on nav click
