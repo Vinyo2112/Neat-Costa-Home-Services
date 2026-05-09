@@ -72,6 +72,38 @@ export default function App() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Initialize Google Translate once the DOM is ready
+  useEffect(() => {
+    const initTranslate = () => {
+      // @ts-ignore
+      if (window.google && window.google.translate && window.google.translate.TranslateElement) {
+        // @ts-ignore
+        new window.google.translate.TranslateElement({
+          pageLanguage: 'en',
+          includedLanguages: 'es',
+          layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element');
+        
+        // @ts-ignore
+        new window.google.translate.TranslateElement({
+          pageLanguage: 'en',
+          includedLanguages: 'es',
+          layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element_mobile');
+      }
+    };
+
+    // If script is already loaded, init immediately
+    // @ts-ignore
+    if (window.google && window.google.translate) {
+      initTranslate();
+    } else {
+      // Otherwise wait for the global function to be called by the script
+      // @ts-ignore
+      window.googleTranslateElementInit = initTranslate;
+    }
+  }, []);
+
   // Close mobile menu on nav click
   const handleNavClick = () => setIsMenuOpen(false);
 
