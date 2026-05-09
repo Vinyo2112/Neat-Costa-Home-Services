@@ -72,38 +72,31 @@ export default function App() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Initialize Google Translate dynamically
+  // Initialize Google Translate (Hidden)
   useEffect(() => {
-    // 1. Define the init function globally
     // @ts-ignore
     window.googleTranslateElementInit = () => {
       // @ts-ignore
-      if (window.google && window.google.translate) {
-        // @ts-ignore
-        new window.google.translate.TranslateElement({
-          pageLanguage: 'en',
-          includedLanguages: 'es',
-          layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE
-        }, 'google_translate_element');
-        
-        // @ts-ignore
-        new window.google.translate.TranslateElement({
-          pageLanguage: 'en',
-          includedLanguages: 'es',
-          layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE
-        }, 'google_translate_element_mobile');
-      }
+      new window.google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'es',
+        autoDisplay: false
+      }, 'google_translate_element_hidden');
     };
 
-    // 2. Inject the script
-    if (!document.getElementById('google-translate-script')) {
-      const script = document.createElement('script');
-      script.id = 'google-translate-script';
-      script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-      script.async = true;
-      document.body.appendChild(script);
-    }
+    const script = document.createElement('script');
+    script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    script.async = true;
+    document.body.appendChild(script);
   }, []);
+
+  const handleLanguageChange = (lang: string) => {
+    const select = document.querySelector('.goog-te-combo') as HTMLSelectElement;
+    if (select) {
+      select.value = lang;
+      select.dispatchEvent(new Event('change'));
+    }
+  };
 
   // Close mobile menu on nav click
   const handleNavClick = () => setIsMenuOpen(false);
@@ -161,12 +154,29 @@ export default function App() {
             >
               Book Now
             </a>
+
+            {/* Custom Language Switcher (Desktop) */}
+            <div className="flex items-center bg-white/10 backdrop-blur-md border border-white/20 rounded-full p-1 ml-2">
+              <button
+                onClick={() => handleLanguageChange('en')}
+                className={`px-3 py-1 rounded-full text-[11px] font-bold transition-all ${scrolled ? 'hover:bg-primary/5' : 'hover:bg-white/10'
+                  } text-white/60 hover:text-white`}
+              >
+                EN
+              </button>
+              <div className="w-px h-3 bg-white/20" />
+              <button
+                onClick={() => handleLanguageChange('es')}
+                className={`px-3 py-1 rounded-full text-[11px] font-bold transition-all ${scrolled ? 'hover:bg-primary/5' : 'hover:bg-white/10'
+                  } text-white/60 hover:text-white`}
+              >
+                ES
+              </button>
+            </div>
           </div>
 
-          {/* Single Google Translate Widget – Managed by CSS for Desktop/Mobile */}
-          <div className="custom-translate-wrapper">
-            <div id="google_translate_element" />
-          </div>
+          {/* Hidden Google Translate Element */}
+          <div id="google_translate_element_hidden" style={{ display: 'none' }} />
 
           {/* Mobile toggle */}
           <button
@@ -204,9 +214,21 @@ export default function App() {
           >
             Book Now via WhatsApp
           </a>
-          {/* Google Translate – mobile */}
-          <div className="custom-translate-wrapper custom-translate-wrapper--mobile">
-            <div id="google_translate_element_mobile" />
+
+          {/* Custom Language Switcher (Mobile) */}
+          <div className="flex items-center justify-center gap-4 py-2 border-t border-border mt-2">
+            <button
+              onClick={() => { handleLanguageChange('en'); handleNavClick(); }}
+              className="flex items-center gap-2 px-6 py-2 rounded-xl border border-border text-sm font-bold text-primary hover:bg-surface transition-all"
+            >
+              English
+            </button>
+            <button
+              onClick={() => { handleLanguageChange('es'); handleNavClick(); }}
+              className="flex items-center gap-2 px-6 py-2 rounded-xl border border-cta text-sm font-bold text-cta hover:bg-cta/5 transition-all"
+            >
+              Español
+            </button>
           </div>
         </div>
       </nav>

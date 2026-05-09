@@ -141,104 +141,17 @@ section[id] {
     GOOGLE TRANSLATE CUSTOM STYLES
 ══════════════════════════════════════════════ */
 
-/* 1. Prevent the Google Banner from pushing the page down */
-body { top: 0 !important; position: static !important; }
-.goog-te-banner-frame { display: none !important; }
+/* Hides the Google Translate Banner and tooltips */
+.goog-te-banner-frame, 
+.goog-te-balloon-frame, 
+#goog-gt-tt, 
+.goog-te-balloon-frame { 
+  display: none !important; 
+}
 
-/* 2. Hide Google's hover tooltips and text highlighting */
 .goog-tooltip { display: none !important; }
 .goog-tooltip:hover { display: none !important; }
 .goog-text-highlight { background-color: transparent !important; border: none !important; box-shadow: none !important; }
-
-/* 3. Hide the Google logo and default text */
-.goog-te-gadget { 
-  color: transparent !important; 
-}
-.goog-te-gadget img { display: none !important; }
-.goog-te-gadget span { display: none !important; } /* Hide the 'Powered by' text */
-
-/* 4. Style the Dropdown to match the Neat Costa Theme */
-.custom-translate-wrapper {
-  display: flex;
-  align-items: center;
-  margin-left: 15px;
-  min-width: 140px; /* Ensure enough space to avoid the "dot" */
-}
-
-.custom-translate-wrapper--mobile {
-  margin-left: 0;
-  justify-content: center;
-  margin-top: 5px;
-}
-
-.goog-te-combo {
-  padding: 10px 16px !important;
-  border-radius: 9999px !important;
-  border: 1px solid var(--color-border) !important; 
-  background-color: white !important;
-  color: var(--color-primary) !important;
-  font-family: var(--font-body) !important;
-  font-size: 13px !important;
-  font-weight: 600 !important;
-  cursor: pointer !important;
-  outline: none !important;
-  transition: all 0.3s ease !important;
-  width: 100% !important;
-  max-width: 160px !important;
-  margin: 0 !important;
-  display: inline-block !important;
-  visibility: visible !important;
-  appearance: auto !important; /* Let the browser show the arrow for reliability */
-}
-
-/* 5. Match the hover state of the site's navigation */
-.goog-te-combo:hover {
-  border-color: var(--color-cta);
-  color: var(--color-cta);
-}
-
-/* Contextual visibility for transparent vs scrolled nav */
-header .goog-te-combo, 
-nav:not(.bg-white\/95) .goog-te-combo {
-  color: var(--color-primary);
-  background-color: white;
-  border-color: rgba(255, 255, 255, 0.5);
-}
-
-nav.bg-white\/95 .goog-te-combo {
-  color: var(--color-primary) !important;
-  border-color: var(--color-border) !important;
-  background-color: var(--color-background);
-}
-
-.custom-translate-wrapper--mobile .goog-te-combo {
-  color: var(--color-primary) !important;
-  border-color: var(--color-border) !important;
-  background-color: var(--color-background) !important;
-  margin: 0 auto;
-}
-
-/* Force visibility and fix "dot" appearance */
-.goog-te-gadget {
-  font-family: var(--font-body) !important;
-  display: flex !important;
-  align-items: center !important;
-  color: transparent !important; /* Hide the "Select Language" text */
-  font-size: 0 !important;
-}
-
-.goog-te-gadget .goog-te-combo {
-  font-size: 13px !important; /* Restore font size for the select */
-}
-
-/* Hide the Google Branding */
-.goog-logo-link, 
-.goog-te-gadget span, 
-.goog-te-banner-frame,
-#goog-gt-tt,
-.goog-te-balloon-frame {
-  display: none !important;
-}
 
 body {
   top: 0 !important;
