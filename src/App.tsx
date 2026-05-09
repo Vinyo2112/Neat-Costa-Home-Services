@@ -91,11 +91,13 @@ export default function App() {
   }, []);
 
   const handleLanguageChange = (lang: string) => {
-    const select = document.querySelector('.goog-te-combo') as HTMLSelectElement;
-    if (select) {
-      select.value = lang;
-      select.dispatchEvent(new Event('change'));
-    }
+    // 1. Set the Google Translate cookie
+    const domain = window.location.hostname.split('.').slice(-2).join('.');
+    document.cookie = `googtrans=/en/${lang}; path=/; domain=.${domain}`;
+    document.cookie = `googtrans=/en/${lang}; path=/; domain=${window.location.hostname}`;
+
+    // 2. Trigger a reload to apply the translation reliably on all devices
+    window.location.reload();
   };
 
   // Close mobile menu on nav click

@@ -145,8 +145,10 @@ section[id] {
 .goog-te-banner-frame, 
 .goog-te-balloon-frame, 
 #goog-gt-tt, 
-.goog-te-balloon-frame { 
+.goog-te-balloon-frame,
+iframe.goog-te-banner-frame { 
   display: none !important; 
+  visibility: hidden !important;
 }
 
 .goog-tooltip { display: none !important; }
@@ -155,4 +157,10 @@ section[id] {
 
 body {
   top: 0 !important;
+  position: static !important;
+}
+
+/* Fix for the white space at the top */
+html {
+  margin-top: 0 !important;
 }
