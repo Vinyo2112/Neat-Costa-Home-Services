@@ -369,7 +369,7 @@ export default function App() {
                   <p className="text-[10px] font-bold uppercase tracking-widest text-primary/70">Personal Service</p>
                 </div>
                 <p className="text-lg font-bold text-primary font-sans leading-tight">Gizella</p>
-                <p className="text-xs text-muted mt-0.5">Owner &amp; sole operator</p>
+                <p className="text-xs text-muted mt-0.5">Owner-operator</p>
               </div>
             </div>
           </motion.div>

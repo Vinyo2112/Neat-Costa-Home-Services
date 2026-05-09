@@ -11,3 +11,4 @@ coverage/
 .agent/
 .local_node/
 design-system/
+.vercel
