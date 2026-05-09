@@ -91,13 +91,19 @@ export default function App() {
   }, []);
 
   const handleLanguageChange = (lang: string) => {
-    // 1. Set the Google Translate cookie
+    // 1. Set the Google Translate cookie (Standard method)
     const domain = window.location.hostname.split('.').slice(-2).join('.');
     document.cookie = `googtrans=/en/${lang}; path=/; domain=.${domain}`;
     document.cookie = `googtrans=/en/${lang}; path=/; domain=${window.location.hostname}`;
 
-    // 2. Trigger a reload to apply the translation reliably on all devices
-    window.location.reload();
+    // 2. Set the URL Hash (Most reliable for mobile/Safari)
+    window.location.hash = `googtrans(en|${lang})`;
+
+    // 3. Trigger a reload to apply the translation reliably
+    // We use a small timeout to ensure the cookie/hash are registered by the browser
+    setTimeout(() => {
+      window.location.reload();
+    }, 100);
   };
 
   // Close mobile menu on nav click
