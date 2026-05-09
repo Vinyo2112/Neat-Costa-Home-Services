@@ -80,36 +80,29 @@ export default function App() {
       // @ts-ignore
       if (window.google && window.google.translate) {
         // @ts-ignore
-        if (document.getElementById('google_translate_element')) {
-          // @ts-ignore
-          new window.google.translate.TranslateElement({
-            pageLanguage: 'en',
-            includedLanguages: 'es',
-            layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE
-          }, 'google_translate_element');
-        }
+        new window.google.translate.TranslateElement({
+          pageLanguage: 'en',
+          includedLanguages: 'es',
+          layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element');
         
         // @ts-ignore
-        if (document.getElementById('google_translate_element_mobile')) {
-          // @ts-ignore
-          new window.google.translate.TranslateElement({
-            pageLanguage: 'en',
-            includedLanguages: 'es',
-            layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE
-          }, 'google_translate_element_mobile');
-        }
+        new window.google.translate.TranslateElement({
+          pageLanguage: 'en',
+          includedLanguages: 'es',
+          layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element_mobile');
       }
     };
 
     // 2. Inject the script
-    const script = document.createElement('script');
-    script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-    script.async = true;
-    document.body.appendChild(script);
-
-    return () => {
-      // Cleanup script if needed, though usually Google Translate is better left alone
-    };
+    if (!document.getElementById('google-translate-script')) {
+      const script = document.createElement('script');
+      script.id = 'google-translate-script';
+      script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+      script.async = true;
+      document.body.appendChild(script);
+    }
   }, []);
 
   // Close mobile menu on nav click
@@ -148,7 +141,7 @@ export default function App() {
             </span>
           </a>
 
-          {/* Desktop links */}
+          {/* Desktop links + Translate */}
           <div className="hidden md:flex items-center gap-8">
             {NAV_LINKS.map((link) => (
               <a
@@ -168,10 +161,11 @@ export default function App() {
             >
               Book Now
             </a>
-            {/* Google Translate – desktop */}
-            <div className="custom-translate-wrapper">
-              <div id="google_translate_element" />
-            </div>
+          </div>
+
+          {/* Single Google Translate Widget – Managed by CSS for Desktop/Mobile */}
+          <div className="custom-translate-wrapper">
+            <div id="google_translate_element" />
           </div>
 
           {/* Mobile toggle */}
@@ -185,42 +179,36 @@ export default function App() {
           </button>
         </div>
 
-        {/* Mobile menu */}
-        <AnimatePresence>
-          {isMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.2 }}
-              className="absolute top-full left-0 right-0 bg-white shadow-xl border-t border-border p-6 md:hidden flex flex-col gap-5"
+        {/* Mobile menu (Persistent in DOM for Google Translate) */}
+        <div 
+          className={`absolute top-full left-0 right-0 bg-white shadow-xl border-t border-border p-6 md:hidden flex flex-col gap-5 transition-all duration-300 ${
+            isMenuOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-2 pointer-events-none"
+          }`}
+        >
+          {NAV_LINKS.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              onClick={handleNavClick}
+              className="text-base font-semibold text-primary hover:text-cta transition-colors cursor-pointer"
             >
-              {NAV_LINKS.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={handleNavClick}
-                  className="text-base font-semibold text-primary hover:text-cta transition-colors cursor-pointer"
-                >
-                  {link.name}
-                </a>
-              ))}
-              <a
-                href={WHATSAPP_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={handleNavClick}
-                className="bg-cta text-white px-6 py-3 rounded-xl font-bold text-center transition-all hover:brightness-110 cursor-pointer"
-              >
-                Book Now via WhatsApp
-              </a>
-              {/* Google Translate – mobile */}
-              <div className="custom-translate-wrapper custom-translate-wrapper--mobile">
-                <div id="google_translate_element_mobile" />
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+              {link.name}
+            </a>
+          ))}
+          <a
+            href={WHATSAPP_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={handleNavClick}
+            className="bg-cta text-white px-6 py-3 rounded-xl font-bold text-center transition-all hover:brightness-110 cursor-pointer"
+          >
+            Book Now via WhatsApp
+          </a>
+          {/* Google Translate – mobile */}
+          <div className="custom-translate-wrapper custom-translate-wrapper--mobile">
+            <div id="google_translate_element_mobile" />
+          </div>
+        </div>
       </nav>
 
       {/* ══════════════════════════════════════════════

@@ -162,7 +162,7 @@ body { top: 0 !important; position: static !important; }
   display: flex;
   align-items: center;
   margin-left: 15px;
-  min-width: 120px; /* Fix the "dot" issue by ensuring minimum width */
+  min-width: 140px; /* Ensure enough space to avoid the "dot" */
 }
 
 .custom-translate-wrapper--mobile {
@@ -172,21 +172,23 @@ body { top: 0 !important; position: static !important; }
 }
 
 .goog-te-combo {
-  padding: 8px 16px;
-  border-radius: 9999px;
-  border: 1px solid var(--color-border); 
-  background-color: white;
-  color: var(--color-primary);
-  font-family: var(--font-body);
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-  outline: none;
-  transition: all 0.3s ease;
-  appearance: none; /* Hide default arrow */
-  -webkit-appearance: none;
-  width: 100% !important; /* Ensure it fills the wrapper */
-  max-width: 150px;
+  padding: 10px 16px !important;
+  border-radius: 9999px !important;
+  border: 1px solid var(--color-border) !important; 
+  background-color: white !important;
+  color: var(--color-primary) !important;
+  font-family: var(--font-body) !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  outline: none !important;
+  transition: all 0.3s ease !important;
+  width: 100% !important;
+  max-width: 160px !important;
+  margin: 0 !important;
+  display: inline-block !important;
+  visibility: visible !important;
+  appearance: auto !important; /* Let the browser show the arrow for reliability */
 }
 
 /* 5. Match the hover state of the site's navigation */
@@ -221,17 +223,20 @@ nav.bg-white\/95 .goog-te-combo {
   font-family: var(--font-body) !important;
   display: flex !important;
   align-items: center !important;
+  color: transparent !important; /* Hide the "Select Language" text */
+  font-size: 0 !important;
 }
 
-.goog-te-combo {
-  display: inline-block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  box-sizing: border-box !important;
+.goog-te-gadget .goog-te-combo {
+  font-size: 13px !important; /* Restore font size for the select */
 }
 
-/* Hide the "Powered by" footer in the popup if possible */
-.goog-logo-link, .goog-te-gadget span, .goog-te-banner-frame {
+/* Hide the Google Branding */
+.goog-logo-link, 
+.goog-te-gadget span, 
+.goog-te-banner-frame,
+#goog-gt-tt,
+.goog-te-balloon-frame {
   display: none !important;
 }
 
