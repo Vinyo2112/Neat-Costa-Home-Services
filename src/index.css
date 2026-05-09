@@ -162,6 +162,8 @@ body { top: 0 !important; position: static !important; }
   display: flex;
   align-items: center;
   margin-left: 15px;
+  min-height: 40px; /* Prevent collapse */
+  min-width: 100px;  /* Prevent collapse */
 }
 
 .custom-translate-wrapper--mobile {
@@ -198,11 +200,19 @@ nav:not(.bg-white\/95) .goog-te-combo {
 }
 
 nav.bg-white\/95 .goog-te-combo {
-  color: var(--color-primary);
-  border-color: var(--color-border);
+  color: var(--color-primary) !important;
+  border-color: var(--color-border) !important;
 }
 
 .custom-translate-wrapper--mobile .goog-te-combo {
   color: var(--color-primary) !important;
   border-color: var(--color-border) !important;
+  background-color: white !important;
+}
+
+/* Force visibility of the actual select element */
+.goog-te-combo {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }

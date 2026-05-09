@@ -72,11 +72,13 @@ export default function App() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Initialize Google Translate once the DOM is ready
+  // Initialize Google Translate dynamically
   useEffect(() => {
-    const initTranslate = () => {
+    // 1. Define the init function globally
+    // @ts-ignore
+    window.googleTranslateElementInit = () => {
       // @ts-ignore
-      if (window.google && window.google.translate && window.google.translate.TranslateElement) {
+      if (window.google && window.google.translate) {
         // @ts-ignore
         new window.google.translate.TranslateElement({
           pageLanguage: 'en',
@@ -93,14 +95,21 @@ export default function App() {
       }
     };
 
-    // If script is already loaded, init immediately
-    // @ts-ignore
-    if (window.google && window.google.translate) {
-      initTranslate();
+    // 2. Inject the script only if it hasn't been added yet
+    const existingScript = document.getElementById('google-translate-script');
+    if (!existingScript) {
+      const script = document.createElement('script');
+      script.id = 'google-translate-script';
+      script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+      script.async = true;
+      document.body.appendChild(script);
     } else {
-      // Otherwise wait for the global function to be called by the script
+      // If script exists, manually trigger init if elements are ready
       // @ts-ignore
-      window.googleTranslateElementInit = initTranslate;
+      if (window.google && window.google.translate) {
+        // @ts-ignore
+        window.googleTranslateElementInit();
+      }
     }
   }, []);
 
