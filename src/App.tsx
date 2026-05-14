@@ -880,7 +880,8 @@ export default function App() {
       <section id="map" className="py-20 md:py-36 bg-surface overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 md:px-12">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-5xl font-bold text-primary tracking-tight">Our Service Area</h2>
+            <span className="section-label">Coverage</span>
+            <h2 className="text-3xl md:text-5xl font-bold text-primary tracking-tight">Service Area</h2>
             <p className="text-muted max-w-xl mx-auto mt-4 text-base italic">Based in La Cala de Mijas, covering the heart of the Costa del Sol.</p>
           </div>
 
