@@ -6,5 +6,6 @@
     <line x1="50" y1="53" x2="50" y2="69"/>
     <line x1="42" y1="61" x2="58" y2="61"/>
   </g>
-  <path d="M5,88 Q30,78 50,88 T95,88" stroke="#1B3A6B" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <path d="M5,85 Q30,75 50,85 T95,85" stroke="#1B3A6B" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M10,92 Q30,82 50,92 T90,92" stroke="#1B3A6B" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.6"/>
 </svg>
