@@ -12,7 +12,7 @@ import { useState, useEffect } from "react";
 /* ─── Constants ──────────────────────────────────────────────────── */
 const WHATSAPP_NUMBER = "34691714064";
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20Gizella%2C%20I%27m%20interested%20in%20your%20property%20care%20services!`;
-const LOGO_URL = "https://drive.google.com/thumbnail?id=1Pq3x-n_X_Hy8J6aOK7nVCK5TksdoOBKf&sz=w1000";
+const LOGO_URL = "/logo.png";
 
 const NAV_LINKS = [
   { name: "About", href: "#about" },
