@@ -12,7 +12,7 @@ import { useState, useEffect } from "react";
 /* ─── Constants ──────────────────────────────────────────────────── */
 const WHATSAPP_NUMBER = "34691714064";
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20Gizella%2C%20I%27m%20interested%20in%20your%20property%20care%20services!`;
-const LOGO_URL = "https://drive.google.com/thumbnail?id=1Pq3x-n_X_Hy8J6aOK7nVCK5TksdoOBKf&sz=w1000";
+const LOGO_URL = "/logo.png";
 
 const NAV_LINKS = [
   { name: "About", href: "#about" },
@@ -134,7 +134,7 @@ export default function App() {
             <img
               src={LOGO_URL}
               alt="Neat Costa logo"
-              className={`h-12 w-auto object-contain transition-all duration-300 mix-blend-multiply ${!scrolled ? "brightness-110" : ""}`}
+              className={`h-12 w-auto object-contain transition-all duration-300 ${!scrolled ? "brightness-110 drop-shadow-sm" : ""}`}
               referrerPolicy="no-referrer"
             />
             <span className={`text-xl font-bold tracking-wide transition-colors font-sans ${scrolled ? "text-primary" : "text-white"}`}>
@@ -992,9 +992,9 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-6 md:px-12 text-center space-y-10">
           <a href="#" className="flex flex-col items-center gap-4 group cursor-pointer" aria-label="Neat Costa — back to top">
             <img
-              src={LOGO_URL}
+              src="/logo-white.png"
               alt="Neat Costa logo"
-              className="h-20 w-auto object-contain mix-blend-lighten brightness-110 transition-transform group-hover:scale-105"
+              className="h-20 w-auto object-contain transition-transform group-hover:scale-105"
               referrerPolicy="no-referrer"
             />
             <span className="text-2xl font-bold text-white tracking-tight font-sans">Neat Costa</span>
